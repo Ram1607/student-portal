@@ -25,33 +25,41 @@
 			<li><a href="#">About Us</a></li>
 			<li><a href="#">Notice</a></li>
 			<li><a href="#">Download</a></li>
+			<li id="myBtn"><a>Login</a></li>
 		</ul>
 		</div>
 	</div>
 	
-	<div class="login">
-		<div class="login-screen">
-			<div class="app-title">
-				<h1>Login</h1>
-			</div>
-			<form method="post" action="login_process.php">
-			<div class="login-form">
-				<div class="control-group">
-				<input type="text" class="login-field" value="" placeholder="username" id="login-name" name="username">
-				<label class="login-field-icon fui-user" for="login-name"></label>
-				</div>
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<div class="login">
+				<div class="login-screen">
+					<div class="app-title">
+						<h1>Login</h1>
+					</div>
+					<form method="post" action="login_process.php">
+					<div class="login-form">
+						<div class="control-group">
+						<input type="text" class="login-field" value="" placeholder="username" id="login-name" name="username">
+						<label class="login-field-icon fui-user" for="login-name"></label>
+						</div>
 
-				<div class="control-group">
-				<input type="password" class="login-field" value="" placeholder="password" id="login-pass" name="pswd">
-				<label class="login-field-icon fui-lock" for="login-pass"></label>
-				</div>
+						<div class="control-group">
+						<input type="password" class="login-field" value="" placeholder="password" id="login-pass" name="pswd">
+						<label class="login-field-icon fui-lock" for="login-pass"></label>
+						</div>
 
-				<input type="submit" class="btn btn-primary btn-large btn-block"  style="background-color:#1c2b4b" value="login"/>
-				<a class="login-link" href="#"> Lost your password?</a>
+						<input type="submit" class="btn btn-primary btn-large btn-block"  style="background-color:#1c2b4b" value="login"/>
+						<input type="button" class="btn btn-primary btn-large btn-block"  id="sign_up_btn" style="background-color:gray" value="Sign Up"/>
+						<a class="login-link" href="#"> Lost your password?</a>
+					</div>
+					</form>
+				</div>
 			</div>
-			</form>
 		</div>
 	</div>
+	<script src="js/javascript.js"></script>
 </body>
   
   
