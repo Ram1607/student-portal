@@ -28,7 +28,7 @@
 				<li><a href="#">About Us</a></li>
 				<li><a href="#">Notice</a></li>
 				<li><a href="#">Download</a></li>
-				<li id="signupBtn"><a>Sign Up</a></li>
+				<li id="signupBtn" style="float:right"><a>Sign Up</a></li>
 				<li id="myBtn" style="float:right"><a>Login</a></li>
 			</ul>
 		</div>
@@ -57,6 +57,9 @@
 									<input type="password" class="login-field" value="" placeholder="password" id="login-pass" name="pswd">
 									<label class="login-field-icon fui-lock" for="login-pass"></label>
 							</div>
+
+							<input type="submit" class="btn btn-primary btn-large btn-block"  style="background-color:#1c2b4b" value="Login"/>
+
 
 							<a class="login-link" href="#"> Lost your password?</a>
 						</div>
@@ -116,7 +119,7 @@
 							</div>
 
 
-							<input type="submit" class="btn btn-primary btn-large btn-block"  style="background-color:#1c2b4b" value="Submit"/>
+							<input type="submit" class="btn btn-primary btn-large btn-block"  style="background-color:#1c2b4b" value="Register"/>
 
 
 						</div>

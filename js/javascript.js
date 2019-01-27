@@ -2,7 +2,7 @@ var modal = document.getElementById('Mymodal');
 
 var signup=document.getElementById('signup');
 
-var btn = document.getElementById("Btn");
+var btn = document.getElementById("myBtn");
 
 var signupbtn = document.getElementById("signupBtn");
 
