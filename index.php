@@ -25,7 +25,7 @@
 			<li><a href="#">About Us</a></li>
 			<li><a href="#">Notice</a></li>
 			<li><a href="#">Download</a></li>
-			<li id="myBtn"><a>Login</a></li>
+			<li id="myBtn" style="float:right"><a>Login</a></li>
 		</ul>
 		</div>
 	</div>
