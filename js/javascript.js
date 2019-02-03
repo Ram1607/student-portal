@@ -27,7 +27,7 @@ window.onclick = function(event) {
     }
     else if(event.target==signup){
     	signup.style.display="none";
-    }
+   }
 }
 
 			// For Sign up modal
