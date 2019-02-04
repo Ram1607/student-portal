@@ -7,9 +7,8 @@
   
   
   
-      <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
-  
 </head>
 
 <body style="background-color:#1c2b4b">
@@ -19,7 +18,8 @@
 	<div class="nav">
 		<div class="webtitle-screen">
 			<div class="webtitle">
-				<h2>National Institute of Technology, Durgapur</h2>
+
+                <h2>National Institute of Technology, Durgapur</h2>
 			</div>
 		</div>
 		<div class="nav-menu">
@@ -130,9 +130,33 @@
 	</div> 
 
 
+										<!--                                       carousel                   --->
 
+    <div class="slideshow-border"> 
+            <div class="slidercontainer">  
+                <div class="showSlide fade">  
+                    <img src="images/img1.jpg" />  
+                    <div class="content">NIT DGP</div>  
+                </div>  
+                <div class="showSlide fade">  
+                    <img src="images/img2.jpeg" />  
+                    <div class="content">NIT DGP</div>  
+                </div>  
+          
+                <div class="showSlide fade">  
+                    <img src="images/img3.jpg" />  
+                    <div class="content">NIT DGP</div>  
+                </div>  
+                <div class="showSlide fade">  
+                    <img src="images/img4.jpg" />  
+                    <div class="content">NIT DGP</div>  
+                </div>  
+                <!-- Navigation arrows -->  
+                <a class="left" onclick="nextSlide(-1)">❮</a>  
+                <a class="right" onclick="nextSlide(1)">❯</a>  
+            </div>
+    </div>
 
-
-	<script src="js/javascript.js"></script>
+    <script src="js/javascript.js"></script>
 </body>
 </html>
