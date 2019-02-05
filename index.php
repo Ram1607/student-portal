@@ -5,15 +5,41 @@
   <meta charset="UTF-8">
   <title>Student Portal</title>
   
-  
-  
-    <link rel="stylesheet" href="css/style.css">
+  <style>
+      
+          .background{
+                background-image: url(images/bg2.jpg);
+                height: 500px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+                border-radius:8px;
+          }
+          .onbackground{
+                color:white;
+                width:30%;
+                position:absolute;
+                padding-left:40px;
+                top:50px;
+                left:10px;
+          }
+
+          .onbackground h1{
+                          color:red;
+          }
+
+  </style>  
+
+ <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body style="background-color:#1c2b4b">
 
 
+
+<div id=main>
 
 	<div class="nav">
 		<div class="webtitle-screen">
@@ -25,9 +51,11 @@
 		<div class="nav-menu">
 			<ul>
 				<li><a href="#">Home</a></li>
-				<li><a href="#">About Us</a></li>
+				<li><a href="#aboutus">About Us</a></li>
 				<li><a href="#">Notice</a></li>
-				<li><a href="#">Download</a></li>
+				<li class="drop-down">
+                <a href="#">Download</a>
+                </li>
 				<li id="signupBtn" style="float:right"><a>Sign Up</a></li>
 				<li id="myBtn" style="float:right"><a>Login</a></li>
 			</ul>
@@ -150,12 +178,63 @@
                 <div class="showSlide fade">  
                     <img src="images/img4.jpg" />  
                     <div class="content">NIT DGP</div>  
-                </div>  
-                <!-- Navigation arrows -->  
+                </div>    
                 <a class="left" onclick="nextSlide(-1)">❮</a>  
                 <a class="right" onclick="nextSlide(1)">❯</a>  
             </div>
     </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+
+
+                                                        <!--               About us page -->
+
+
+
+    <div id="aboutus">
+        <div class="background">
+            <div class="onbackground">
+                <h1>AboutUs</h1>
+                <p>We are the students of <b>NIT Durgapur</b> and with three members in a team.We design webpages just like here we have designed           student login portal.We are very creative team members who are very experienced designing many webpages.</p>
+            </div>
+        </div>
+    </div>
+
+
+</div>
 
     <script src="js/javascript.js"></script>
 </body>
