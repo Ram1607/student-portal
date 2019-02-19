@@ -3,20 +3,20 @@
 	
 	$id = $_REQUEST['username'];
 	$pswd = $_REQUEST['pswd'];
-	$con = mysqli_connect('localhost','root','','student-portal',3307) or die("Server can't connect try again");
+	$con = mysqli_connect('localhost','pradum','Abc@123','student-portal',3307) or die("Server can't connect try again");
 	mysqli_select_db($con,'student-portal') or die("Database not found!!");
 	$s = "select * from login where username='$id' and password='$pswd'";
 	$result = mysqli_query($con,$s) or die(mysqli_error($con));
 	if($row = mysqli_fetch_assoc($result))
 	{
-		$_SESSION["ss_res"] = $result;
+		$_SESSION["ss_username"] = $row['username'];
 		if($row['type'])
 		{
-			echo "Admin";
+			echo "<script>window.location='http://localhost/Project/student-portal/admin.php';</script>";
 		}
 		else
 		{
-			echo "Student";
+			echo "<script>window.location='http://localhost/Project/student-portal/student.php';</script>";
 		}
 	}
 	else

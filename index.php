@@ -120,7 +120,8 @@
 						<div class="login-form">
 
 										<div class="control-group">
-												<input type="text" class="login-field" value="" placeholder="Name" name="Name">
+												<input type="text" class="login-field" value="" placeholder="Name" name="Name" id="reg_name">
+												<span style="display:none" id="error">Error</span>
 												<label class="login-field-icon fui-user" for="login-name"></label>
 										</div>
 										
@@ -456,7 +457,7 @@
     </div>
 
 </div>
-
+	<script type="text/javascript" src="jquery.min.js"></script>
     <script src="js/javascript.js"></script>
 </body>
 </html>

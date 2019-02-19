@@ -402,4 +402,15 @@
   font-size:20px;
   color:red;
 }
+/* validation CSS*/
 
+.invalid{
+  border: 2px solid red;
+}
+.valid{
+  border: 2px solid green;
+}
+#loginBtn:hover {
+  background-color: #777777;
+  color: #000;
+}
