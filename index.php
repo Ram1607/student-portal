@@ -121,24 +121,27 @@
 
 										<div class="control-group">
 												<input type="text" class="login-field" value="" placeholder="Name" name="Name" id="reg_name">
-												<span style="display:none" id="error">Error</span>
+												<span class="error_modal" style="display:none" id="error_reg_name">Name is required</span>
 												<label class="login-field-icon fui-user" for="login-name"></label>
 										</div>
 										
 										<div class="control-group">
-												<input type="text" class="login-field" value="" placeholder="Father's name" name="father name">
+												<input type="text" class="login-field" value="" placeholder="Father's name" name="father name" id="f_name">
+												<span class="error_modal" style="display:none" id="error_f_name">Name is required</span>
 												<label class="login-field-icon fui-user" for="login-name"></label>
 										</div>
 
 
 										<div class="control-group">
-												<input type="text" class="login-field" value="" placeholder="Mother's name" id="login-name" name="mother name">
+												<input type="text" class="login-field" value="" placeholder="Mother's name" id="m_name" name="mother name">
+												<span class="error_modal" style="display:none" id="error_m_name">Name is required</span>
 												<label class="login-field-icon fui-user" for="login-name"></label>
 										</div>
 
 
 										<div class="control-group">
-												<input type="text" class="login-field" value="" placeholder="Date of birth: dd/mm/yy" id="login-name" name="dob">
+												<input type="text" class="login-field" value="" placeholder="Date of birth: dd/mm/yy" id="dob" name="dob">
+												<span class="error_modal" style="display:none" id="error_dob">Name is required</span>
 												<label class="login-field-icon fui-user" for="login-name"></label>
 										</div>
 
@@ -159,8 +162,10 @@
 										</div>
 
 										<div class="control-group">
-												<input type="text" class="login-field" value="" placeholder="Nationality" id="" name="nationality">
+												<input type="text" class="login-field" value="" placeholder="Nationality" id="nationality" name="nationality">
 												<label class="login-field-icon fui-user" for="login-name"></label>
+												<span class="error_modal" style="display:none" id="error_nationality">Name is required</span>
+												
 										</div>
 
 
@@ -170,7 +175,7 @@
 			</div>
 
 
-			<div id=next1  class="btn btn-primary btn-large btn-block" style="background-color:#1c2b4b ;float:right;text-align: center;padding:4px 0;width:90px">
+			<div id=next1  class="btn btn-primary btn-large btn-block" id="next1" style="background-color:#1c2b4b ;float:right;text-align: center;padding:4px 0;width:90px">
 				<a>Next</a>	
 			</div>
 

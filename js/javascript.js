@@ -67,11 +67,6 @@ signupbtn.onclick = function() {
     signup.style.display = "block";
 }
 
-next1.onclick =function() {
-    signup.style.display="none";
-    signup2.style.display="block";
-
-}
 
 next2.onclick =function() {
     signup2.style.display="none";
@@ -124,14 +119,18 @@ function showSlides() {
 /*       About us Javascript */
 
 /* validation of registration form */
-$(document).ready(function() {
-    //jQuery code goes here
-    $('#reg_name').on('focus', function() {
-        var input=$(this);
-        var is_name=input.val();
-        if(is_name){input.attr('border','2px solid green');}
-        else{input.attr('border','2px solid red');}
-        if(is_name){$('#error').attr('display','display');}
-    });
+next1.addEventListener("click",function(){
+    var name = document.getElementById("reg_name").value;
+    var error = document.getElementById("error_reg_name");
+    if(name)
+    {
+        signup.style.display="none";
+        signup2.style.display="block";
+    }
+    else
+    {
+        console.log(name.value);
+        error.style.display="block";
+    }
+    
 });
-

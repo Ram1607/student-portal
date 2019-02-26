@@ -414,3 +414,9 @@
   background-color: #777777;
   color: #000;
 }
+
+.error_modal {
+  font-size: 12px;
+  color: red;
+  margin: 1px;
+}

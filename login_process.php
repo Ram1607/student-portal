@@ -9,7 +9,7 @@
 	$result = mysqli_query($con,$s) or die(mysqli_error($con));
 	if($row = mysqli_fetch_assoc($result))
 	{
-		$_SESSION["ss_username"] = $row['username'];
+		$_SESSION["ss_username"] = $row['userame'];
 		if($row['type'])
 		{
 			echo "<script>window.location='http://localhost/Project/student-portal/admin.php';</script>";
