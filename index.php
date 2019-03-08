@@ -75,7 +75,7 @@
 					<div class="app-title">
 						<h1>Login</h1>
 					</div>
-					<form method="post" action="login_process.php">
+					<form method="post" action="login_process.php" id="myform0">
 						<div class="login-form">
 							<div class="control-group">
 									<input type="text" class="login-field" value="" placeholder="username" id="login-name" name="username">
@@ -113,35 +113,36 @@
 			<div class="login">
 				<div class="login-screen">
 					<div class="app-title">
+						<span class="common_error_modal" style="display:none;color: red;" id="common_error"> * please fill all the fields correctly *  </span>
 						<h1>Registration</h1>
 						<h5>(1/3)</h5>
 					</div>
-					<form method="post" action="#">
+					<form method="post" action="#" id="myform">
 						<div class="login-form">
 
 										<div class="control-group">
-												<input type="text" class="login-field" value="" placeholder="Name" name="Name" id="reg_name">
-												<span class="error_modal" style="display:none" id="error_reg_name">Name is required</span>
+												<input type="text" class="login-field " onclick="regi()" value="" placeholder="Name" name="Name" id="reg_name">
+												<span class="error_modal" style="display:none" id="error_reg_name">Name containing atleast 6 letters is required </span>
 												<label class="login-field-icon fui-user" for="login-name"></label>
 										</div>
 										
 										<div class="control-group">
-												<input type="text" class="login-field" value="" placeholder="Father's name" name="father name" id="f_name">
-												<span class="error_modal" style="display:none" id="error_f_name">Name is required</span>
+												<input type="text" class="login-field" onclick="fname()" value="" placeholder="Father's name" name="father name" id="f_name">
+												<span class="error_modal" style="display:none" id="error_f_name"> father name containing atleast 6 letters is required</span>
 												<label class="login-field-icon fui-user" for="login-name"></label>
 										</div>
 
 
 										<div class="control-group">
-												<input type="text" class="login-field" value="" placeholder="Mother's name" id="m_name" name="mother name">
-												<span class="error_modal" style="display:none" id="error_m_name">Name is required</span>
+												<input type="text" class="login-field" onclick="mname()" value="" placeholder="Mother's name" id="m_name" name="mother name">
+												<span class="error_modal" style="display:none" id="error_m_name">mother name containing atleast 6 letters is required</span>
 												<label class="login-field-icon fui-user" for="login-name"></label>
 										</div>
 
 
 										<div class="control-group">
-												<input type="text" class="login-field" value="" placeholder="Date of birth: dd/mm/yy" id="dob" name="dob">
-												<span class="error_modal" style="display:none" id="error_dob">Name is required</span>
+												<input type="text" class="login-field" onclick="dateob()" value="" placeholder="Date of birth: dd/mm/yy" id="dob" name="dob">
+												<span class="error_modal" style="display:none" id="error_dob">What's your DOB</span>
 												<label class="login-field-icon fui-user" for="login-name"></label>
 										</div>
 
@@ -151,20 +152,24 @@
 													<td style="padding-left: 56px;">GENDER</td>
 													<td style="padding-left:38px;">
 														  <label for="male">Male</label>
-  														  <input type="radio" name="gender" id="male" value="male">
+  														  <input type="radio" onclick="fmale()" name="gender" id="male" >
   													</td>
   													<td style="padding-left: 38px;">
 													  	  <label for="female">Female</label>
-  													  	  <input type="radio" name="gender" id="female" value="female">
+  													  	  <input type="radio"onclick="ffemale()"  name="gender" id="female" >
 													</td>
 												</tr>
+												
 											</table>
+
+											<span class="error_modal" style="display:none" id="error_gender">What's your gender ?</span>
+
 										</div>
 
 										<div class="control-group">
-												<input type="text" class="login-field" value="" placeholder="Nationality" id="nationality" name="nationality">
+												<input type="text" class="login-field" onclick="nation()" value="" placeholder="Nationality" id="nationality" name="nationality">
 												<label class="login-field-icon fui-user" for="login-name"></label>
-												<span class="error_modal" style="display:none" id="error_nationality">Name is required</span>
+												<span class="error_modal" style="display:none" id="error_nationality">What's your nationality ?</span>
 												
 										</div>
 
@@ -174,9 +179,15 @@
 				</div>
 			</div>
 
+			<br>
+			<br>
 
-			<div id=next1  class="btn btn-primary btn-large btn-block" id="next1" style="background-color:#1c2b4b ;float:right;text-align: center;padding:4px 0;width:90px">
-				<a>Next</a>	
+			<div class="btn btn-primary btn-large btn-block" id="reset" style="background-color:#1c2b4b ;float:right;text-align: center;padding:4px 0;width:90px">
+				<a onclick="reset()">Reset</a>	
+			</div>
+
+			<div class="btn btn-primary btn-large btn-block" id="next1" style="background-color:#1c2b4b ;float:right;text-align: center;padding:4px 0;width:90px;margin-right: 8px;">
+				<a onclick="nextb1()">Next</a>	
 			</div>
 
 
@@ -197,52 +208,62 @@
 			<div class="login">
 				<div class="login-screen">
 					<div class="app-title">
+
+			<span class="common_error_modal" style="display:none;color: red;" id="common_erro"> * please fill all the fields correctly *  </span>
 						<h1>Registration</h1>
 						<h5>(2/3)</h5>
 					</div>
-					<form method="post" action="#">
+					<form method="post" action="#" id="myform1">
 						<div class="login-form">
 
 										<div class="control-group">
-												<input type="text" class="login-field" value="" placeholder="Registration Number" name="Regno">
+												<input type="text" class="login-field" value="" onclick="reg()" placeholder="Registration Number" name="Regino" id="regno">
+												<span class="error_modal" style="display:none" id="error_reg">Whats your reg no. ?</span>
 												<label class="login-field-icon fui-user" for="login-name"></label>
+
 										</div>
 										
 										<div class="control-group">
-												<input type="text" class="login-field" value="" placeholder="Roll Number" name="regno">
+												<input type="text" class="login-field" value="" onclick="rollyno()" placeholder="Roll Number" name="rollno" id="roll">
 												<label class="login-field-icon fui-user" for="login-name"></label>
+												<span class="error_modal" style="display:none" id="error_roll">Whats your roll no. ?</span>
+											
 										</div>
 
 
 										<div class="control-group" class=dropdown>
-													<SELECT class="login-field" >
+													<SELECT class="login-field" id="select" >
 
-													<OPTION  style="text-align: center;" Value="Department">Department</OPTION>
+													<OPTION  style="text-align: center;" Value="">Department</OPTION>
 													<OPTION Value="Information Technology">Information Technology</OPTION>
 													<OPTION Value="Computer science and Engineering">Computer science and Engi.</OPTION>
 													<OPTION Value="40 to 60">Metallurgical & Materials Engi.</OPTION>
 													<OPTION Value="Over 60">Bio-Technology</OPTION>
 
 													</SELECT>
+													<span class="error_modal" style="display:none" id="error_select">Whats ypur dept.?</span>
 										</div>
 
 
 										<div class="control-group">
-												<input type="text" class="login-field" value="" placeholder="Date of birth: dd/mm/yy" id="login-name" name="dob">
+												<input type="number" class="login-field" value="" onclick="c_tenth()" placeholder="Whats your 10th %" id="tenth" name="tenth_mark">
 												<label class="login-field-icon fui-user" for="login-name"></label>
+												<span class="error_modal" style="display:none" id="error_tenth">Hey ! Fill your 10th %</span>
 										</div>
 
 
 										<div class="control-group">
-												<input type="text" class="login-field" value="" placeholder="Email" id="login-name" name="email">
+												<input type="number" class="login-field" value="" onclick="c_twelve()" placeholder="Whats your 12th %" id="twelve" name="twelve_mark">
 												<label class="login-field-icon fui-user" for="login-name"></label>
+												<span class="error_modal" style="display:none" id="error_twelve">Hey ! Fill your 12th %</span>
 										</div>
 
 
 
 										<div class="control-group">
-												<input type="text" class="login-field" value="" placeholder="Address" id="login-name" name="address">
+												<input type="number" class="login-field" value="" onclick="c_cgpa()" placeholder="Whats your CGPA(in %)" id="cgpa" name="cgpa_mark">
 												<label class="login-field-icon fui-user" for="login-name"></label>
+												<span class="error_modal" style="display:none" id="error_cgpa">Hey ! Fill your cgpa</span>
 										</div>
 
 						</div>
@@ -252,8 +273,19 @@
 				</div>
 			</div>
 
-			<div id=next2  class="btn btn-primary btn-large btn-block" style="background-color:#1c2b4b ;float:right;text-align: center;padding:4px 0;width:90px">
-				<a>Next</a>	
+			<br>
+			<br>
+
+			<div id=previous1  class="btn btn-primary btn-large btn-block" style="background-color:#1c2b4b ;float:left;text-align: center;padding:4px 0;width:90px">
+				<a onclick="previous1()">Previous</a>	
+			</div>
+
+			<div id=reset1  class="btn btn-primary btn-large btn-block" style="background-color:#1c2b4b ;float:right;text-align: center;padding:4px 0;width:90px">
+				<a onclick="reset1()">Reset</a>	
+			</div>
+
+			<div id=next2  class="btn btn-primary btn-large btn-block" style="background-color:#1c2b4b ;float:right;text-align: center;padding:4px 0;width:90px;margin-right: 8px;">
+				<a onclick="nextb2()">Next</a>	
 			</div>
 
 		</div>
@@ -273,54 +305,67 @@
 			<div class="login">
 				<div class="login-screen">
 					<div class="app-title">
+				<span class="common_error_modal" style="display:none;color: red;" id="common_err"> * please fill all the fields correctly *  </span>
 						<h1>Registration</h1>
 						<h5>(3/3)</h5>
 					</div>
-					<form method="post" action="#">
+					<form method="post" action="#" id="myform2">
 						<div class="login-form">
 
 										<div class="control-group">
-												<input type="text" class="login-field" value="" placeholder="Contact no." name="contact">
+												<input type="number" class="login-field" value="" onclick="con()" placeholder="Contact no." name="contact" id="contact">
 												<label class="login-field-icon fui-user" for="login-name"></label>
+												<span class="error_modal" style="display:none" id="error_contact">Hey ! Fill your contact</span>
 										</div>
 										
 										<div class="control-group">
-												<input type="email" class="login-field" value="" placeholder="Email" name="email">
+												<input type="email" class="login-field" value="" onclick="eemail()" placeholder="Email" name="email" id="email" >
 												<label class="login-field-icon fui-user" for="login-name"></label>
+												<span class="error_modal" style="display:none" id="error_email">Hey ! Fill your email correctly</span>
 										</div>
 
 
 										<div class="control-group">
-												<input type="address" class="login-field" value="" placeholder="Permanent Address" id="login-name" name="peraddress">
+												<input type="address" class="login-field" value="" onclick="permanent()" placeholder="Permanent Address" id="peraddress" name="peraddress">
 												<label class="login-field-icon fui-user" for="login-name"></label>
+												<span class="error_modal" style="display:none" id="error_perm">Hey ! Fill your perm. address</span>
 										</div>
 
 
 										<div class="control-group">
-												<input type="text" class="login-field" value="" placeholder="Correspondence Address" id="login-name" name="corraddress">
+												<input type="text" class="login-field" value="" onclick="corres()" placeholder="Correspondence Address" id="corraddress" name="corraddress" >
 												<label class="login-field-icon fui-user" for="login-name"></label>
+												<span class="error_modal" style="display:none" id="error_corr">Hey ! Fill your corr. address</span>
 										</div>
 
 
 										<div class="control-group">
-												<input type="password" class="login-field" value="" placeholder="Password" id="login-name" name="password">
+												<input type="password" class="login-field" value="" onclick="pash()" placeholder="Password" id="pass" name="password">
 												<label class="login-field-icon fui-user" for="login-name"></label>
+												<span class="error_modal" style="display:none" id="error_pass">Hey ! fill your pass</span>
 										</div>
 
 
 
 										<div class="control-group">
-												<input type="password" class="login-field" value="" placeholder="Confirm Password" id="login-name" name="confirm password">
+												<input type="password" class="login-field" value="" onclick="conpash()" placeholder="Confirm Password" id="conpass" name="confirm password">
 												<label class="login-field-icon fui-user" for="login-name"></label>
+												<span class="error_modal" style="display:none" id="error_confirm">Password is not matched</span>
 										</div>
 
-							<input type="submit" class="btn btn-primary btn-large btn-block"  style="background-color:#1c2b4b" value="Register"/>
-
-
+							<input type="submit" class="btn btn-primary btn-large btn-block" onmouseenter="regist()" onmouseout="regist2()" style="background-color:#1c2b4b" value="Register"/>
 
 						</div>
 					</form>
 				</div>
+			</div>
+
+			<div id=previous2  class="btn btn-primary btn-large btn-block" style="background-color:#1c2b4b ;float:left;text-align: center;padding:4px 0;width:90px">
+				<a onclick="previous2()">Previous</a>	
+			</div>
+
+			<div id=reset2  class="btn btn-primary btn-large btn-block" style="background-color:#1c2b4b ;float:right;text-align: center;padding:4px 0;width:90px">
+				<a onclick="reset2()">Reset</a>	
 			</div>
 
 		</div>
@@ -462,6 +507,7 @@
     </div>
 
 </div>
+
 	<script type="text/javascript" src="jquery.min.js"></script>
     <script src="js/javascript.js"></script>
 </body>
