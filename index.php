@@ -117,7 +117,7 @@
 						<h1>Registration</h1>
 						<h5>(1/3)</h5>
 					</div>
-					<form method="post" action="#" id="myform">
+					<form method="post" action="reg_process.php" id="myform">
 						<div class="login-form">
 
 										<div class="control-group">
@@ -127,23 +127,27 @@
 										</div>
 										
 										<div class="control-group">
-												<input type="text" class="login-field" onclick="fname()" value="" placeholder="Father's name" name="father name" id="f_name">
+												<input type="text" class="login-field" onclick="fname()" value="" placeholder="Father's name" name="f_name" id="f_name">
 												<span class="error_modal" style="display:none" id="error_f_name"> father name containing atleast 6 letters is required</span>
 												<label class="login-field-icon fui-user" for="login-name"></label>
 										</div>
 
 
 										<div class="control-group">
-												<input type="text" class="login-field" onclick="mname()" value="" placeholder="Mother's name" id="m_name" name="mother name">
+												<input type="text" class="login-field" onclick="mname()" value="" placeholder="Mother's name" id="m_name" name="m_name">
 												<span class="error_modal" style="display:none" id="error_m_name">mother name containing atleast 6 letters is required</span>
 												<label class="login-field-icon fui-user" for="login-name"></label>
 										</div>
 
 
 										<div class="control-group">
-												<input type="text" class="login-field" onclick="dateob()" value="" placeholder="Date of birth: dd/mm/yy" id="dob" name="dob">
-												<span class="error_modal" style="display:none" id="error_dob">What's your DOB</span>
-												<label class="login-field-icon fui-user" for="login-name"></label>
+												<div class="date">
+													<input type="text" class="login-field" disabled="disabled" value="" placeholder="Date of birth" id="dobi" name="dob">
+													<span class="error_modal" style="display:none" id="error_dob">What's your DOB</span>
+													<label class="login-field-icon fui-user" for="login-name"></label>
+													<input type="date" class="login-field" onclick="dateob()" value="" placeholder="Date of birth: dd/mm/yy" id="dob" name="dob">
+													
+												</div>
 										</div>
 
 										<div class=table>
@@ -152,11 +156,11 @@
 													<td style="padding-left: 56px;">GENDER</td>
 													<td style="padding-left:38px;">
 														  <label for="male">Male</label>
-  														  <input type="radio" onclick="fmale()" name="gender" id="male" >
+  														  <input type="radio" onclick="fmale()" name="gender" id="male" value="0">
   													</td>
   													<td style="padding-left: 38px;">
 													  	  <label for="female">Female</label>
-  													  	  <input type="radio"onclick="ffemale()"  name="gender" id="female" >
+  													  	  <input type="radio" onclick="ffemale()"  name="gender" id="female" value="1">
 													</td>
 												</tr>
 												
@@ -175,7 +179,6 @@
 
 
 						</div>
-					</form>
 				</div>
 			</div>
 
@@ -213,7 +216,6 @@
 						<h1>Registration</h1>
 						<h5>(2/3)</h5>
 					</div>
-					<form method="post" action="#" id="myform1">
 						<div class="login-form">
 
 										<div class="control-group">
@@ -232,7 +234,7 @@
 
 
 										<div class="control-group" class=dropdown>
-													<SELECT class="login-field" id="select" >
+													<SELECT class="login-field" id="select" name="department">
 
 													<OPTION  style="text-align: center;" Value="">Department</OPTION>
 													<OPTION Value="Information Technology">Information Technology</OPTION>
@@ -267,8 +269,7 @@
 										</div>
 
 						</div>
-					</form>
-
+					
 
 				</div>
 			</div>
@@ -309,7 +310,6 @@
 						<h1>Registration</h1>
 						<h5>(3/3)</h5>
 					</div>
-					<form method="post" action="#" id="myform2">
 						<div class="login-form">
 
 										<div class="control-group">

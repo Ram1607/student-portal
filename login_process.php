@@ -3,7 +3,7 @@
 	
 	$id = $_REQUEST['username'];
 	$pswd = $_REQUEST['pswd'];
-	$con = mysqli_connect('localhost','pradum','Abc@123','student-portal',3307) or die("Server can't connect try again");
+	$con = mysqli_connect('localhost','pradum','Aqzplm@123','student-portal',3307) or die("Server can't connect try again");
 	mysqli_select_db($con,'student-portal') or die("Database not found!!");
 	$s = "select * from login where username='$id' and password='$pswd'";
 	$result = mysqli_query($con,$s) or die(mysqli_error($con));
