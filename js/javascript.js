@@ -170,7 +170,7 @@ function errors(){
 
 var error_reg_name = document.getElementById("error_reg_name");
 
-var common_error = document.getElementById("common_error");
+
 
 var error_f_name = document.getElementById("error_f_name");
 
@@ -186,7 +186,7 @@ var regex=/^[a-zA-Z_ ]*$/;
 
 function regi(){
     errors();
-    common_error.style.display="none";
+
 
 }
 
@@ -196,16 +196,14 @@ var reg_name = document.getElementById("reg_name").value;
 
     errors();
 
-    if(!(reg_name.length>=6) || !(reg_name.match(regex)) )
+    if(!(reg_name.length>0) || !(reg_name.match(regex)) )
     {
         error_reg_name.style.display="block";
-        common_error.style.display="none";
-
     }
     else
     {
         error_reg_name.style.display="none";
-        common_error.style.display="none";
+
     }
     
 }
@@ -217,11 +215,11 @@ function mname(){
 var reg_name = document.getElementById("reg_name").value;
 var f_name = document.getElementById("f_name").value;
 
-    if(!(reg_name.length>=6) || !(reg_name.match(regex)) ){
-        common_error.style.display="block";
+    if(!(reg_name.length>0) || !(reg_name.match(regex)) ){
         errors();
+        error_reg_name.style.display="block";
     }
-    else if(!(f_name.length>=6) || !(f_name.match(regex)))
+    else if(!(f_name.length>0) || !(f_name.match(regex)))
     {
         error_f_name.style.display="block";
         common_error.style.display="none";
@@ -229,7 +227,7 @@ var f_name = document.getElementById("f_name").value;
     else
     {
         error_f_name.style.display="none";
-        common_error.style.display="none";
+
     }
     
 }
@@ -246,19 +244,24 @@ var reg_name = document.getElementById("reg_name").value;
 
 var m_name = document.getElementById("m_name").value;
 
-    if(!(f_name.length>=6) || !(f_name.match(regex)) || !(reg_name.length>=6) || !(reg_name.match(regex))){
-        common_error.style.display="block";
+    if( !(reg_name.length>0) || !(reg_name.match(regex))){
         errors();
+        error_reg_name.style.display="block";
+
     }
-    else if(!(m_name.length>=6) || !(m_name.match(regex)))
+    else if(!(f_name.length>0) || !(f_name.match(regex))){
+        errors();
+        error_f_name.style.display="block";
+    }
+    else if(!(m_name.length>0) || !(m_name.match(regex)))
     {
         error_m_name.style.display="block";
-        common_error.style.display="none";
+
     }
     else
     {
         error_m_name.style.display="none";
-        common_error.style.display="none";
+
     }
     
 }
@@ -275,19 +278,29 @@ var m_name = document.getElementById("m_name").value;
 
 var dob = document.getElementById("dob").value;
 
-    if(!(f_name.length>=6) || !(f_name.match(regex)) || !(reg_name.length>=6) || !(reg_name.match(regex)) || !(m_name.length>=6) || !(m_name.match(regex)) ){
-        common_error.style.display="block";
+    if(!(reg_name.length>0) || !(reg_name.match(regex)))
+    {
         errors();
+        error_reg_name.style.display="block";
+    }
+    else if(!(f_name.length>0) || !(f_name.match(regex))){
+        errors();
+        error_f_name.style.display="block";
+    }
+    else if(!(m_name.length>0) || !(m_name.match(regex)) ){
+        errors();
+        error_m_name.style.display="block";        
     }
     else if(dob)
     {
+        errors();
         error_dob.style.display="none";
-        common_error.style.display="none";
+
     }
     else
     {
         error_dob.style.display="block";
-        common_error.style.display="none";
+
     }
     
 }
@@ -304,20 +317,29 @@ var m_name = document.getElementById("m_name").value;
 
 var dob = document.getElementById("dob").value;
 
-    if(!(f_name.length>=6) || !(f_name.match(regex)) || !(reg_name.length>=6) || !(reg_name.match(regex)) || !(m_name.length>=6) || !(m_name.match(regex)))
+    if(!(reg_name.length>0) || !(reg_name.match(regex)))
     {
-        common_error.style.display="block";
         errors();
+        error_reg_name.style.display="block";
+    }
+    else if(!(f_name.length>0) || !(f_name.match(regex))){
+        errors();
+        error_f_name.style.display="block";
+    }
+    else if(!(m_name.length>0) || !(m_name.match(regex)) ){
+        errors();
+        error_m_name.style.display="block";        
     }
     else if(dob)
     {
+        errors();
         error_dob.style.display="none";
-        common_error.style.display="none";
+
     }
     else
     {
         error_dob.style.display="block";
-        common_error.style.display="none";
+
     }
     
 }
@@ -338,19 +360,34 @@ var dob = document.getElementById("dob").value;
 
 
 
-    if(!(f_name.length>=6) || !(f_name.match(regex)) || !(reg_name.length>=6) || !(reg_name.match(regex)) || !(m_name.match(regex)) || !(m_name.length>=6) || !dob ){
-        common_error.style.display="block";
+    if(!(reg_name.length>0) || !(reg_name.match(regex)))
+    {
         errors();
+        error_reg_name.style.display="block";
+    }
+    else if(!(f_name.length>0) || !(f_name.match(regex))){
+        errors();
+        error_f_name.style.display="block";
+    }
+    else if(!(m_name.length>0) || !(m_name.match(regex)) ){
+        errors();
+        error_m_name.style.display="block";        
+    }
+    else if(!dob)
+    {
+        errors();
+        error_dob.style.display="block";
     }
     else if(document.getElementById('male').checked || document.getElementById('female').checked)
     {
+        errors();
         error_gender.style.display="none";
-        common_error.style.display="none";
+
     }
     else
     {
         error_gender.style.display="block";
-        common_error.style.display="none";
+
     }
     
 }
@@ -371,28 +408,49 @@ var dob = document.getElementById("dob").value;
 var nationality = document.getElementById("nationality").value;
 
 
-    if(!(f_name.length>=6) || !(f_name.match(regex)) || !(reg_name.length>=6) || !(reg_name.match(regex)) || !(m_name.length>=6) || !(m_name.match(regex)) || !dob || !(document.getElementById('male').checked || document.getElementById('female').checked) ){
-        common_error.style.display="block";
+    if(!(reg_name.length>0) || !(reg_name.match(regex)))
+    {
         errors();
+        error_reg_name.style.display="block";
     }
-    else if(nationality)
+    else if(!(f_name.length>0) || !(f_name.match(regex))){
+        errors();
+        error_f_name.style.display="block";
+    }
+    else if(!(m_name.length>0) || !(m_name.match(regex)) ){
+        errors();
+        error_m_name.style.display="block";        
+    }
+    else if(!dob)
+    {
+        errors();
+        error_dob.style.display="block";
+    }
+    else if(!(document.getElementById('male').checked) && !(document.getElementById('female').checked))
+    {
+        errors();
+        error_gender.style.display="block";
+
+    }
+    else if(nationality.length>0 && nationality.match(regex))
     {
         signup.style.display="none";
         signup2.style.display="block";
     }
     else
     {
+        errors();
         error_nationality.style.display="block";
-        common_error.style.display="none";
+
     }
     
-}
+}   
 
 
 
-                                                        /*  FORM VALIDATION FOR 2ND MODAL */ 
+                                                        /* FORM VALIDATION FOR 2ND MODAL */ 
 
-alpha=/^[a-z0-9]+$/;
+alpha=/^[0-9]{2}[a-zA-Z]{1,3}[0-9]{4,5}$/;
 
 function errors1(){
     error_reg.style.display="none";
@@ -406,7 +464,7 @@ function errors1(){
 
 var error_reg = document.getElementById("error_reg");
 
-var common_erro = document.getElementById("common_erro");
+
 
 var error_roll = document.getElementById("error_roll");
 
@@ -420,7 +478,7 @@ var error_cgpa = document.getElementById("error_cgpa");
 
 function reg(){
     errors1();
-    common_erro.style.display="none";
+
 }
 
 function rollyno(){
@@ -431,18 +489,19 @@ var regno = document.getElementById("regno").value;
 
 if(regno && regno.match(alpha)){
     error_reg.style.display="none";
-    common_erro.style.display="none";
+
 }
 else{
     error_reg.style.display="block";
-    common_erro.style.display="none";
+
 
 }
     
 }
 
-  document.getElementById("select").onchange = function()
+document.getElementById("select").onchange = function()
 {
+
 errors1();
 
 var regno = document.getElementById("regno").value;
@@ -450,15 +509,16 @@ var regno = document.getElementById("regno").value;
 var roll=document.getElementById("roll").value;
 
 if(!(regno) || !(regno.match(alpha))){
-    common_erro.style.display="block";
     errors1();
+    error_reg.style.display="block";
 }
 else if(!(roll) || !(roll.match(alpha))){
+    errors1();
     error_roll.style.display="block";
 }
 else{
     errors1();
-    common_erro.style.display="none";
+
 }
 
 };
@@ -474,18 +534,23 @@ var roll=document.getElementById("roll").value;
 var e = document.getElementById("select");
 var select = e.options[e.selectedIndex].value;
 
-if(!(regno) || !(roll) || !(regno.match(alpha)) || !(roll.match(alpha))){
-    common_erro.style.display="block";
+if(!(regno) || !(regno.match(alpha))){
     errors1();
+    error_reg.style.display="block";
+}
+else if(!(roll) || !(roll.match(alpha))){
+    errors1();
+    error_roll.style.display="block";
 }
 else if(!(select)){
+    errors1();
     error_select.style.display="block";
-    common_erro.style.display="none";
+
 
 }
 
 else{
-    common_erro.style.display="none";
+
     errors1();
 }
 
@@ -504,18 +569,27 @@ var select = e.options[e.selectedIndex].value;
 
 var tenth=document.getElementById("tenth").value;
 
-if(!(regno) || !(roll) || !(select) || !(regno.match(alpha)) || !(roll.match(alpha))){
-    common_erro.style.display="block";
+if(!(regno) || !(regno.match(alpha))){
     errors1();
+    error_reg.style.display="block";
 }
-else if(!(tenth)){
-    error_tenth.style.display="block";
-    common_erro.style.display="none";
+else if(!(roll) || !(roll.match(alpha))){
+    errors1();
+    error_roll.style.display="block";
+}
+else if(!(select)){
+    errors1();
+    error_select.style.display="block";
 
+
+}
+else if(!(tenth>0 && tenth<=100)){
+    errors1();
+    error_tenth.style.display="block";
 }
 
 else{
-    common_erro.style.display="none";
+
     errors1();
 }
 
@@ -538,18 +612,31 @@ var tenth=document.getElementById("tenth").value;
 
 var twelve=document.getElementById("twelve").value;
 
-if(!(regno) || !(roll) || !(select) || !(tenth) || !(regno.match(alpha)) || !(roll.match(alpha))){
-    common_erro.style.display="block";
+if(!(regno) || !(regno.match(alpha))){
     errors1();
+    error_reg.style.display="block";
 }
-else if(!(twelve)){
-    error_twelve.style.display="block";
-    common_erro.style.display="none";
+else if(!(roll) || !(roll.match(alpha))){
+    errors1();
+    error_roll.style.display="block";
+}
+else if(!(select)){
+    errors1();
+    error_select.style.display="block";
 
+
+}
+else if(!(tenth>0 && tenth<=100)){
+    errors1();
+    error_tenth.style.display="block";
+}
+else if(!(twelve>0 && twelve<=100)){
+    errors1();
+    error_twelve.style.display="block";
 }
 
 else{
-    common_erro.style.display="none";
+
     errors1();
 }
 
@@ -573,18 +660,37 @@ var twelve=document.getElementById("twelve").value;
 
 var cgpa=document.getElementById("cgpa").value;
 
-if(!(regno) || !(roll) || !(select) || !(tenth) || !(twelve) || !(regno.match(alpha)) || !(roll.match(alpha))){
-    common_erro.style.display="block";
+if(!(regno) || !(regno.match(alpha))){
     errors1();
+    error_reg.style.display="block";
 }
-else if(!(cgpa)){
+else if(!(roll) || !(roll.match(alpha))){
+    errors1();
+    error_roll.style.display="block";
+}
+else if(!(select)){
+    errors1();
+    error_select.style.display="block";
+
+
+}
+else if(!(tenth>0 && tenth<=100)){
+    errors1();
+    error_tenth.style.display="block";
+}
+else if(!(twelve>0 && twelve<=100)){
+    errors1();
+    error_twelve.style.display="block";
+}
+else if(!(cgpa>0 && cgpa<=100)){
+    errors1();
     error_cgpa.style.display="block";
-    common_erro.style.display="none";
+
 
 }
 
 else{
-    common_erro.style.display="none";
+
     errors1();
     signup2.style.display="none";
     signup3.style.display="block";
@@ -613,7 +719,7 @@ function errors2(){
 
 var error_contact = document.getElementById("error_contact");
 
-var common_err = document.getElementById("common_err");
+
 
 var error_email = document.getElementById("error_email");
 
@@ -627,7 +733,7 @@ var error_confirm = document.getElementById("error_confirm");
 
 function con(){
     errors2();
-    common_err.style.display="none";
+
 }
 
 function eemail(){
@@ -635,11 +741,11 @@ function eemail(){
 
 if(contact && contact.length==10){
     error_contact.style.display="none";
-    common_err.style.display="none";
+
 }
 else{
     error_contact.style.display="block";
-    common_err.style.display="none";
+
 
 }
 }
@@ -651,16 +757,16 @@ function permanent(){
 
 
 if(!(contact) || !(contact.length==10) ){
-    common_err.style.display="block";
     errors2();
+    error_contact.style.display="block";
 }
 else if(!(email) || !(email.match(regexemail))){
+    errors2();
     error_email.style.display="block";
-    common_err.style.display="none";
 }
 else{
     errors2();
-    common_err.style.display="none";
+
 }
 
 }
@@ -671,19 +777,26 @@ function corres(){
 
     var peraddress=document.getElementById("peraddress").value;
 
-if(!(contact ) || !(email) || !(email.match(regexemail)) || !(contact.length==10) ){
-    common_err.style.display="block";
+if(!(contact) || !(contact.length==10) ){
     errors2();
+    error_contact.style.display="block";
+}
+else if(!(email) || !(email.match(regexemail))){
+    errors2();
+    error_email.style.display="block";
 }
 else if(!(peraddress)){
+    errors2();
     error_perm.style.display="block";
-    common_err.style.display="none";
+
 }
 else{
     errors2();
-    common_err.style.display="none";
+
 }
 }
+
+var passregex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
 
 function pash(){
 
@@ -694,17 +807,27 @@ function pash(){
 
     var corraddress=document.getElementById("corraddress").value;
 
-if(!(contact) || !(email) || !(peraddress) || !(email.match(regexemail)) || !(contact.length==10) ){
-    common_err.style.display="block";
+if(!(contact) || !(contact.length==10) ){
     errors2();
+    error_contact.style.display="block";
+}
+else if(!(email) || !(email.match(regexemail))){
+    errors2();
+    error_email.style.display="block";
+}
+else if(!(peraddress)){
+    errors2();
+    error_perm.style.display="block";
+
 }
 else if(!(corraddress)){
+    errors2();
     error_corr.style.display="block";
-    common_err.style.display="none";
+
 }
 else{
     errors2();
-    common_err.style.display="none";
+
 }
 }
 
@@ -716,20 +839,36 @@ function conpash(){
     var corraddress=document.getElementById("corraddress").value;
     var pass=document.getElementById("pass").value;
 
-if(!(contact) || !(email) || !(peraddress) || !(corraddress) || !(email.match(regexemail)) || !(contact.length==10) ){
-    common_err.style.display="block";
+if(!(contact) || !(contact.length==10) ){
     errors2();
+    error_contact.style.display="block";
 }
-else if(!(pass)){
+else if(!(email) || !(email.match(regexemail))){
+    errors2();
+    error_email.style.display="block";
+}
+else if(!(peraddress)){
+    errors2();
+    error_perm.style.display="block";
+
+}
+else if(!(corraddress)){
+    errors2();
+    error_corr.style.display="block";
+
+}
+else if(!(pass) || !(pass.match(passregex)))
+{
+    errors2();
     error_pass.style.display="block";
-    common_err.style.display="none";
+
 }
 else{
     errors2();
-    common_err.style.display="none";
-}
-}
 
+}
+} 
+ 
 function regist(){
     var contact=document.getElementById("contact").value;
     var email=document.getElementById("email").value;
@@ -740,25 +879,46 @@ function regist(){
 
     var conpass=document.getElementById("conpass").value;
 
-if(!(contact) || !(email) || !(peraddress) || !(corraddress) || !(pass) || !(email.match(regexemail)) || !(contact.length==10) ){
-    common_err.style.display="block";
+if(!(contact) || !(contact.length==10) ){
     errors2();
+    error_contact.style.display="block";
+}
+else if(!(email) || !(email.match(regexemail))){
+    errors2();
+    error_email.style.display="block";
+}
+else if(!(peraddress)){
+    errors2();
+    error_perm.style.display="block";
+
+}
+else if(!(corraddress)){
+    errors2();
+    error_corr.style.display="block";
+
+}
+else if(!(pass) || !(pass.match(passregex)))
+{
+    errors2();
+    error_pass.style.display="block";
+
 }
 else if(conpass!=pass){
+    errors2();
     error_confirm.style.display="block";
-    common_err.style.display="none";
+
 }
 else{
     errors2();
-    common_err.style.display="none";
-}
+
+    document.getElementById("myform2").submit();
+    signup3.style.display="none";
 
 }
 
-function regist2(){
-    errors2();
-    common_err.style.display="none";
 }
+
+
 
 
 

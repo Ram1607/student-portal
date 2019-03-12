@@ -113,7 +113,7 @@
 			<div class="login">
 				<div class="login-screen">
 					<div class="app-title">
-						<span class="common_error_modal" style="display:none;color: red;" id="common_error"> * please fill all the fields correctly *  </span>
+						
 						<h1>Registration</h1>
 						<h5>(1/3)</h5>
 					</div>
@@ -122,20 +122,20 @@
 
 										<div class="control-group">
 												<input type="text" class="login-field " onclick="regi()" value="" placeholder="Name" name="Name" id="reg_name">
-												<span class="error_modal" style="display:none" id="error_reg_name">Name containing atleast 6 letters is required </span>
+												<span class="error_modal" style="display:none" id="error_reg_name">Name is required (only alphabets)</span>
 												<label class="login-field-icon fui-user" for="login-name"></label>
 										</div>
 										
 										<div class="control-group">
-												<input type="text" class="login-field" onclick="fname()" value="" placeholder="Father's name" name="f_name" id="f_name">
-												<span class="error_modal" style="display:none" id="error_f_name"> father name containing atleast 6 letters is required</span>
+												<input type="text" class="login-field" onclick="fname()" value="" placeholder="Father's name" name="father name" id="f_name">
+												<span class="error_modal" style="display:none" id="error_f_name"> father name is required(only alphabets)</span>
 												<label class="login-field-icon fui-user" for="login-name"></label>
 										</div>
 
 
 										<div class="control-group">
-												<input type="text" class="login-field" onclick="mname()" value="" placeholder="Mother's name" id="m_name" name="m_name">
-												<span class="error_modal" style="display:none" id="error_m_name">mother name containing atleast 6 letters is required</span>
+												<input type="text" class="login-field" onclick="mname()" value="" placeholder="Mother's name" id="m_name" name="mother name">
+												<span class="error_modal" style="display:none" id="error_m_name">mother name is required (only alphabets)</span>
 												<label class="login-field-icon fui-user" for="login-name"></label>
 										</div>
 
@@ -173,7 +173,7 @@
 										<div class="control-group">
 												<input type="text" class="login-field" onclick="nation()" value="" placeholder="Nationality" id="nationality" name="nationality">
 												<label class="login-field-icon fui-user" for="login-name"></label>
-												<span class="error_modal" style="display:none" id="error_nationality">What's your nationality ?</span>
+												<span class="error_modal" style="display:none" id="error_nationality">What's your nationality ? (only alphabets)</span>
 												
 										</div>
 
@@ -200,7 +200,7 @@
 
 
 
-	<div id="signup2" class="modal">
+	<div id="signup2" class="modal" >
 		<div class="modal-content1">
 
 			<span class="close3">&times;</span>
@@ -212,7 +212,7 @@
 				<div class="login-screen">
 					<div class="app-title">
 
-			<span class="common_error_modal" style="display:none;color: red;" id="common_erro"> * please fill all the fields correctly *  </span>
+			
 						<h1>Registration</h1>
 						<h5>(2/3)</h5>
 					</div>
@@ -220,7 +220,7 @@
 
 										<div class="control-group">
 												<input type="text" class="login-field" value="" onclick="reg()" placeholder="Registration Number" name="Regino" id="regno">
-												<span class="error_modal" style="display:none" id="error_reg">Whats your reg no. ?</span>
+												<span class="error_modal" style="display:none" id="error_reg">Whats your reg no. ? (format: year/U/regno.) </span>
 												<label class="login-field-icon fui-user" for="login-name"></label>
 
 										</div>
@@ -228,7 +228,7 @@
 										<div class="control-group">
 												<input type="text" class="login-field" value="" onclick="rollyno()" placeholder="Roll Number" name="rollno" id="roll">
 												<label class="login-field-icon fui-user" for="login-name"></label>
-												<span class="error_modal" style="display:none" id="error_roll">Whats your roll no. ?</span>
+												<span class="error_modal" style="display:none" id="error_roll">Whats your roll no. ? (Format: year/branch/rollno. )</span>
 											
 										</div>
 
@@ -250,14 +250,14 @@
 										<div class="control-group">
 												<input type="number" class="login-field" value="" onclick="c_tenth()" placeholder="Whats your 10th %" id="tenth" name="tenth_mark">
 												<label class="login-field-icon fui-user" for="login-name"></label>
-												<span class="error_modal" style="display:none" id="error_tenth">Hey ! Fill your 10th %</span>
+												<span class="error_modal" style="display:none" id="error_tenth">Hey ! Fill your 10th % (0 < % <= 100)</span>
 										</div>
 
 
 										<div class="control-group">
 												<input type="number" class="login-field" value="" onclick="c_twelve()" placeholder="Whats your 12th %" id="twelve" name="twelve_mark">
 												<label class="login-field-icon fui-user" for="login-name"></label>
-												<span class="error_modal" style="display:none" id="error_twelve">Hey ! Fill your 12th %</span>
+												<span class="error_modal" style="display:none" id="error_twelve">Hey ! Fill your 12th %(0 < % <= 100)</span>
 										</div>
 
 
@@ -265,7 +265,7 @@
 										<div class="control-group">
 												<input type="number" class="login-field" value="" onclick="c_cgpa()" placeholder="Whats your CGPA(in %)" id="cgpa" name="cgpa_mark">
 												<label class="login-field-icon fui-user" for="login-name"></label>
-												<span class="error_modal" style="display:none" id="error_cgpa">Hey ! Fill your cgpa</span>
+												<span class="error_modal" style="display:none" id="error_cgpa">Hey ! Fill your cgpa(0 < % <= 100)</span>
 										</div>
 
 						</div>
@@ -296,7 +296,7 @@
 
 
 
-	<div id="signup3" class="modal">
+	<div id="signup3" class="modal" >
 		<div class="modal-content1">
 			<span class="close4">&times;</span>
 
@@ -306,7 +306,7 @@
 			<div class="login">
 				<div class="login-screen">
 					<div class="app-title">
-				<span class="common_error_modal" style="display:none;color: red;" id="common_err"> * please fill all the fields correctly *  </span>
+					
 						<h1>Registration</h1>
 						<h5>(3/3)</h5>
 					</div>
@@ -342,7 +342,7 @@
 										<div class="control-group">
 												<input type="password" class="login-field" value="" onclick="pash()" placeholder="Password" id="pass" name="password">
 												<label class="login-field-icon fui-user" for="login-name"></label>
-												<span class="error_modal" style="display:none" id="error_pass">Hey ! fill your pass</span>
+												<span class="error_modal" style="display:none" id="error_pass">Hey! Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character is required</span>
 										</div>
 
 
@@ -353,7 +353,7 @@
 												<span class="error_modal" style="display:none" id="error_confirm">Password is not matched</span>
 										</div>
 
-							<input type="submit" class="btn btn-primary btn-large btn-block" onmouseenter="regist()" onmouseout="regist2()" style="background-color:#1c2b4b" value="Register"/>
+							<input type="button"class="btn btn-primary btn-large btn-block" onclick="regist()" style="background-color:#1c2b4b" value="Register"/>
 
 						</div>
 					</form>
