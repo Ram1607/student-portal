@@ -127,14 +127,14 @@
 										</div>
 										
 										<div class="control-group">
-												<input type="text" class="login-field" onclick="fname()" value="" placeholder="Father's name" name="father name" id="f_name">
+												<input type="text" class="login-field" onclick="fname()" value="" placeholder="Father's name" name="f_name" id="f_name">
 												<span class="error_modal" style="display:none" id="error_f_name"> father name is required(only alphabets)</span>
 												<label class="login-field-icon fui-user" for="login-name"></label>
 										</div>
 
 
 										<div class="control-group">
-												<input type="text" class="login-field" onclick="mname()" value="" placeholder="Mother's name" id="m_name" name="mother name">
+												<input type="text" class="login-field" onclick="mname()" value="" placeholder="Mother's name" id="m_name" name="m_name">
 												<span class="error_modal" style="display:none" id="error_m_name">mother name is required (only alphabets)</span>
 												<label class="login-field-icon fui-user" for="login-name"></label>
 										</div>
@@ -353,7 +353,7 @@
 												<span class="error_modal" style="display:none" id="error_confirm">Password is not matched</span>
 										</div>
 
-							<input type="button"class="btn btn-primary btn-large btn-block" onclick="regist()" style="background-color:#1c2b4b" value="Register"/>
+							<input type="submit" id="sub" class="btn btn-primary btn-large btn-block" style="background-color:#1c2b4b" value="Register"/>
 
 						</div>
 					</form>

@@ -29,7 +29,7 @@
 	}
 	else
 	{
-		echo "<script>window.location='http://localhost/project/R.Brothers/#contact-sec';</script>";
+		echo "<script>window.location='http://localhost/project/student-portal/';</script>";
 	}
 	
 ?>

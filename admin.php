@@ -1,5 +1,10 @@
 <?php
     session_start();
+    $con = mysqli_connect('localhost','pradum','Aqzplm@123','student-portal',3307) or die("Server can't connect try again");
+	mysqli_select_db($con,'student-portal') or die("Database not found!!");
+	$s = "SELECT * FROM details WHERE active=0";
+	$result = mysqli_query($con,$s) or die(mysqli_error($con));
+    
 ?>
 <!DOCTYPE html>
 <html lang="en" >
@@ -64,6 +69,31 @@
 				</div>
 			</div>
 	</div>
+    <div class="table">
+    <table style="background-color:white;">
+        <tr>
+            <th>Sl</th>
+            <th>Name</th>
+            <th>Reg. No.</th>
+            <th>Roll. No.</th>
+            <th>Action</th>
+        </tr>
+        <?php
+            while($row=mysqli_fetch_assoc($result))
+            {
+        ?>
+        <tr>
+            <td><?php echo $row['sl']; ?></td>
+            <td><?php echo $row['name']; ?></td>
+            <td><?php echo $row['reg_no']; ?></td> 
+            <td><?php echo $row['roll_no']; ?></td>
+            <td><button style="background-color:green;" onclick="ajaxreq('acc','<?php echo $row['reg_no'];?>')">Accept</button><button style="background-color:red;" onclick="ajaxreq('rej','<?php echo $row['reg_no'];?>')">Reject</button></td>
+        </tr>
+            <?php } ?>
+        </table>
+    </div>
+    <div id="txtHint">
+    </div>
 	<script type="text/javascript" src="jquery.min.js"></script>
     <script src="js/javascript.js"></script>
 </body>
