@@ -9,20 +9,21 @@
 	$result = mysqli_query($con,$s) or die(mysqli_error($con));
 	if($row = mysqli_fetch_assoc($result))
 	{
-		$_SESSION["ss_username"] = $row['userame'];
+		$_SESSION["ss_user"] = $row['username'];
 		if($row['type'])
 		{
+			$_SESSION['ss_type'] = 1;
 			echo "<script>window.location='http://localhost/Project/student-portal/admin.php';</script>";
 		}
 		else
 		{
+			$_SESSION['ss_type'] = 0;
 			echo "<script>window.location='http://localhost/Project/student-portal/student.php';</script>";
 		}
 	}
 	else
 	{
-		$_SESSION["ss_er"] = "w";
-		echo "<script>window.location='http://localhost/project/R.Brothers/#contact-sec';</script>";
+		echo "<script>window.location='http://localhost/Project/student-portal';</script>";
 	}
 	
 ?>

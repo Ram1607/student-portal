@@ -1,5 +1,10 @@
 <?php
     session_start();
+    if(!isset($_SESSION['ss_user'])||$_SESSION['ss_type']!=1)
+	{
+		$_SESSION['ss_e'] = 1;
+		echo "<script>window.location='http://localhost/Project/student-portal';</script>";
+	}
     $con = mysqli_connect('localhost','pradum','Aqzplm@123','student-portal',3307) or die("Server can't connect try again");
 	mysqli_select_db($con,'student-portal') or die("Database not found!!");
 	$s = "SELECT * FROM details WHERE active=0";
@@ -63,8 +68,8 @@
                         <li><a href="#manage">Manage</a></li>
 						<li><a href="#">Notice</a></li>
 						<li class="drop-down"><a href="#">Download</a></li>
-                        <li style="float:right"><a id="logoutbtn">logout</a></li>
-                        <li style="float:right;bottom-paading:10px;">welcome <?php echo $_SESSION['ss_username']; ?> / </li>
+                        <li style="float:right"><a href="logout.php" id="logoutbtn">logout</a></li>
+                        <li style="float:right;bottom-paading:10px;">welcome <?php echo $_SESSION['ss_user']; ?> / </li>
 					</ul>
 				</div>
 			</div>

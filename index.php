@@ -1,3 +1,14 @@
+<?php
+	session_start();
+	if(isset($_SESSION['ss_e']))
+	{
+		if($_SESSION['ss_e']==1)
+		{
+			echo "<script>alert('Please Login First')</script>";
+		}
+		unset($_SESSION['ss_e']);
+	}
+?>
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -117,7 +128,7 @@
 						<h1>Registration</h1>
 						<h5>(1/3)</h5>
 					</div>
-					<form method="post" action="reg_process.php" id="myform">
+					<form method="post" action="reg_process.php" id="myform" enctype="multipart/form-data">
 						<div class="login-form">
 
 										<div class="control-group">
@@ -126,6 +137,12 @@
 												<label class="login-field-icon fui-user" for="login-name"></label>
 										</div>
 										
+										<div class="control-group">
+												<input type="file" class="login-field " name="photo" id="photo">
+												<span class="error_modal" style="display:none" id="error_reg_name">Name is required (only alphabets)</span>
+												<label class="login-field-icon fui-user" for="login-name"></label>
+										</div>
+
 										<div class="control-group">
 												<input type="text" class="login-field" onclick="fname()" value="" placeholder="Father's name" name="f_name" id="f_name">
 												<span class="error_modal" style="display:none" id="error_f_name"> father name is required(only alphabets)</span>
@@ -353,7 +370,7 @@
 												<span class="error_modal" style="display:none" id="error_confirm">Password is not matched</span>
 										</div>
 
-							<input type="submit" id="sub" class="btn btn-primary btn-large btn-block" style="background-color:#1c2b4b" value="Register"/>
+							<input type="submit" name="sub" id="sub" class="btn btn-primary btn-large btn-block" style="background-color:#1c2b4b" value="Register"/>
 
 						</div>
 					</form>
