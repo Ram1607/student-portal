@@ -8,6 +8,8 @@ var signup3=document.getElementById('signup3');
 
 var btn = document.getElementById("myBtn");
 
+var passModal = document.getElementById('passModal');
+
 var signupbtn = document.getElementById("signupBtn");
 
 var next1=document.getElementById("next1");
@@ -935,6 +937,11 @@ else{
     xhttp.send();
   }
 
+function lostPass() {
+    passModal.style.display = "block";
+    document.getElementById("myform5").reset();
+
+}
 
 
 

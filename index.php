@@ -101,7 +101,7 @@
 							<input type="submit" class="btn btn-primary btn-large btn-block"  style="background-color:#1c2b4b" value="Login"/>
 
 
-							<a class="login-link" href="#"> Lost your password?</a>
+							<a class="login-link" id="lostPass" onclick="lostPass()"> Lost your password?</a>
 						</div>
 					</form>
 				</div>
@@ -110,7 +110,39 @@
 		</div>
 	</div>
 
+		  										<!-- Forget Password -->
 
+	<div id="passModal" class="modal">
+		<div class="modal-content">
+			<span class="close1">&times;</span>
+			<div class="login">
+				<div class="login-screen">
+					<div class="app-title">
+						<h1>Password Recovery</h1>
+					</div>
+					<form method="post" action="pass_recovery.php" id="myform5">
+						<div class="login-form">
+							<div class="control-group">
+									<input type="text" class="login-field" value="" placeholder="username" id="login-name" name="username">
+									<label class="login-field-icon fui-user" for="login-name"></label>
+							</div>
+
+							<div class="control-group">
+									<input type="password" class="login-field" value="" placeholder="password" id="login-pass" name="pswd">
+									<label class="login-field-icon fui-lock" for="login-pass"></label>
+							</div>
+
+							<input type="submit" class="btn btn-primary btn-large btn-block"  style="background-color:#1c2b4b" value="Login"/>
+
+
+							<a class="login-link" href="#"> Lost your password?</a>
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</div>
 													<!-- Sign up Modal -->
 
 

@@ -75,7 +75,14 @@
 			</div>
 	</div>
     <div class="table">
-    <table style="background-color:white;">
+    <table style="background-color:white;width:96%;margin-left:2%;margin-right:2%">
+        <tr style="color:white;background-color:blue;">
+            <th style="width:8%"></th>
+            <th style="width:30%">New Students</th>
+            <th style="width:20%"></th>
+            <th style="width:20%"></th>
+            <th style="width:20%"></th>
+        </tr>
         <tr>
             <th>Sl</th>
             <th>Name</th>
@@ -95,7 +102,69 @@
             <td><button style="background-color:green;" onclick="ajaxreq('acc','<?php echo $row['reg_no'];?>')">Accept</button><button style="background-color:red;" onclick="ajaxreq('rej','<?php echo $row['reg_no'];?>')">Reject</button></td>
         </tr>
             <?php } ?>
-        </table>
+    </table>
+    <br/>
+    <table style="background-color:white;width:96%;margin-left:2%;margin-right:2%">
+        <tr style="color:white;background-color:blue;">
+            <th style="width:8%"></th>
+            <th style="width:30%">Accepted Students</th>
+            <th style="width:20%"></th>
+            <th style="width:20%"></th>
+            <th style="width:20%"></th>
+        </tr>
+        <tr>
+            <th>Sl</th>
+            <th>Name</th>
+            <th>Reg. No.</th>
+            <th>Roll. No.</th>
+            <th>Action</th>
+        </tr>
+        <?php
+            $s = "SELECT * FROM details WHERE active=1";
+            $result = mysqli_query($con,$s) or die(mysqli_error($con));        
+            while($row=mysqli_fetch_assoc($result))
+            {
+        ?>
+        <tr>
+            <td><?php echo $row['sl']; ?></td>
+            <td><?php echo $row['name']; ?></td>
+            <td><?php echo $row['reg_no']; ?></td> 
+            <td><?php echo $row['roll_no']; ?></td>
+            <td><button style="background-color:blue;">View</button></td>
+        </tr>
+            <?php } ?>
+    </table>
+    <br/>
+    <table style="background-color:white;width:96%;margin-left:2%;margin-right:2%">
+        <tr style="color:white;background-color:blue;">
+            <th style="width:8%"></th>
+            <th style="width:30%">Rejected Students</th>
+            <th style="width:20%"></th>
+            <th style="width:20%"></th>
+            <th style="width:20%"></th>
+        </tr>
+        <tr>
+            <th>Sl</th>
+            <th>Name</th>
+            <th>Reg. No.</th>
+            <th>Roll. No.</th>
+            <th>Action</th>
+        </tr>
+        <?php
+            $s = "SELECT * FROM details WHERE active=2";
+            $result = mysqli_query($con,$s) or die(mysqli_error($con));        
+            while($row=mysqli_fetch_assoc($result))
+            {
+        ?>
+        <tr>
+            <td><?php echo $row['sl']; ?></td>
+            <td><?php echo $row['name']; ?></td>
+            <td><?php echo $row['reg_no']; ?></td> 
+            <td><?php echo $row['roll_no']; ?></td>
+            <td><button style="background-color:blue;">View</button></td>
+        </tr>
+            <?php } ?>
+    </table>
     </div>
     <div id="txtHint">
     </div>
