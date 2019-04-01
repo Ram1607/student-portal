@@ -18,6 +18,8 @@
 	$per_address = $_REQUEST['peraddress'];
 	$cor_address = $_REQUEST['corraddress'];
 	$password = $_REQUEST['password'];
+	$question = $_REQUEST['question'];
+	$answer = $_REQUEST['answer'];
 
 	$target_dir = "uploads/";
 	$target_file = $target_dir . basename($_FILES["photo"]["name"]);
@@ -47,7 +49,7 @@
 	
     $con = mysqli_connect('localhost','pradum','Aqzplm@123','student-portal',3307) or die("Server can't connect try again");
 	mysqli_select_db($con,'student-portal') or die("Database not found!!");
-	$s = "INSERT INTO details (name,f_name,m_name,dob,gender,nationality,reg_no,roll_no,department,marks_10,marks_12,cgpa,contact,email,per_address,cor_address,password) VALUES('$name','$f_name','$m_name',$dob,$gender,'$nationality','$reg_no','$roll_no','$department',$marks_10,$marks_12,$cgpa,$contact,'$email','$per_address','$cor_address','$password')";
+	$s = "INSERT INTO details (name,f_name,m_name,dob,gender,nationality,reg_no,roll_no,department,marks_10,marks_12,cgpa,contact,email,per_address,cor_address,password,que,ans) VALUES('$name','$f_name','$m_name',$dob,$gender,'$nationality','$reg_no','$roll_no','$department',$marks_10,$marks_12,$cgpa,$contact,'$email','$per_address','$cor_address','$password',$question,'$answer')";
 	$result = mysqli_query($con,$s) or die(mysqli_error($con));
 	if($result>0)
 	{

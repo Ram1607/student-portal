@@ -114,7 +114,7 @@
 
 	<div id="passModal" class="modal">
 		<div class="modal-content">
-			<span class="close1">&times;</span>
+			<span class="close5">&times;</span>
 			<div class="login">
 				<div class="login-screen">
 					<div class="app-title">
@@ -122,20 +122,26 @@
 					</div>
 					<form method="post" action="pass_recovery.php" id="myform5">
 						<div class="login-form">
-							<div class="control-group">
-									<input type="text" class="login-field" value="" placeholder="username" id="login-name" name="username">
-									<label class="login-field-icon fui-user" for="login-name"></label>
+							<div class="control-group" class=dropdown>
+								<SELECT class="login-field" id="select" name="question">
+
+								<OPTION  style="text-align: center;" Value="">Select your security question</OPTION>
+								<OPTION Value="0" style="color:black;">What is your nick name?</OPTION>
+								<OPTION Value="1" style="color:black;">Who is your fav actor?</OPTION>
+								<OPTION Value="2" style="color:black;">Who is your fav acteress?</OPTION>
+								<OPTION Value="3" style="color:black;">which team you will support in IPL?</OPTION>
+								<OPTION Value="4" style="color:black;">Your fav place for vacation?</OPTION>
+								
+								</SELECT>
+								<span class="error_modal" style="display:none" id="error_select">Select your security question</span>
 							</div>
 
 							<div class="control-group">
-									<input type="password" class="login-field" value="" placeholder="password" id="login-pass" name="pswd">
+									<input type="text" class="login-field" value="" placeholder="Answer" id="answer" name="answer">
 									<label class="login-field-icon fui-lock" for="login-pass"></label>
 							</div>
 
-							<input type="submit" class="btn btn-primary btn-large btn-block"  style="background-color:#1c2b4b" value="Login"/>
-
-
-							<a class="login-link" href="#"> Lost your password?</a>
+							<input type="submit" class="btn btn-primary btn-large btn-block"  style="background-color:#1c2b4b" value="Submit"/>
 						</div>
 					</form>
 				</div>
@@ -286,10 +292,14 @@
 													<SELECT class="login-field" id="select" name="department">
 
 													<OPTION  style="text-align: center;" Value="">Department</OPTION>
-													<OPTION Value="Information Technology">Information Technology</OPTION>
-													<OPTION Value="Computer science and Engineering">Computer science and Engi.</OPTION>
-													<OPTION Value="40 to 60">Metallurgical & Materials Engi.</OPTION>
-													<OPTION Value="Over 60">Bio-Technology</OPTION>
+													<OPTION Value="Information Technology" style="color:black;">Information Technology</OPTION>
+													<OPTION Value="Electrical Engineering" style="color:black;">Electrical Engineering</OPTION>
+													<OPTION Value="Computer science and Engineering" style="color:black;">Computer science and Engi.</OPTION>
+													<OPTION Value="Metallurgical & Materials Engineering" style="color:black;">Metallurgical & Materials Engi.</OPTION>
+													<OPTION Value="Bio-Technologyy" style="color:black;">Bio-Technology</OPTION>
+													<OPTION Value="Mechanical Engineering" style="color:black;">Mechanical Engineering</OPTION>
+													<OPTION Value="Chemical Engineering" style="color:black;">Chemical Engineering</OPTION>
+													<OPTION Value="Civil Engineering" style="color:black;">Civil Engineering</OPTION>
 
 													</SELECT>
 													<span class="error_modal" style="display:none" id="error_select">Whats ypur dept.?</span>
@@ -401,6 +411,26 @@
 												<label class="login-field-icon fui-user" for="login-name"></label>
 												<span class="error_modal" style="display:none" id="error_confirm">Password is not matched</span>
 										</div>
+
+										<div class="control-group" class=dropdown>
+											<SELECT class="login-field" id="select" name="question">
+
+											<OPTION  style="text-align: center;" Value="">Select your security question</OPTION>
+											<OPTION Value="0" style="color:black;">What is your nick name?</OPTION>
+											<OPTION Value="1" style="color:black;">Who is your fav actor?</OPTION>
+											<OPTION Value="2" style="color:black;">Who is your fav acteress?</OPTION>
+											<OPTION Value="3" style="color:black;">which team you will support in IPL?</OPTION>
+											<OPTION Value="4" style="color:black;">Your fav place for vacation?</OPTION>
+											
+											</SELECT>
+											<span class="error_modal" style="display:none" id="error_select">Select your security question</span>
+										</div>
+
+										<div class="control-group">
+												<input type="text" class="login-field" value="" placeholder="Answer" id="answer" name="answer">
+												<label class="login-field-icon fui-lock" for="login-pass"></label>
+										</div>
+
 
 							<input type="submit" name="sub" id="sub" class="btn btn-primary btn-large btn-block" style="background-color:#1c2b4b" value="Register"/>
 

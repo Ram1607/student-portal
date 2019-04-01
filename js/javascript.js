@@ -25,7 +25,9 @@ var span2 = document.getElementsByClassName("close2")[0];
 var span3 = document.getElementsByClassName("close3")[0];
 
 var span4 = document.getElementsByClassName("close4")[0];
- 
+
+var span5 = document.getElementsByClassName("close5")[0]
+
 btn.onclick = function() {
     modal.style.display = "block";
     document.getElementById("myform0").reset();
@@ -47,6 +49,10 @@ span4.onclick = function() {
         signup3.style.display="none";
 }
 
+span5.onclick = function() {
+    passModal.style.display="none";
+}
+
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
@@ -62,6 +68,10 @@ window.onclick = function(event) {
     else if(event.target==signup3){
         signup3.style.display="none";
    }
+   else if(event.target == passModal){
+        passModal.style.display="none";
+   } 
+
 /*
    document.getElementById("myform").reset();
    document.getElementById("myform1").reset();
@@ -938,6 +948,7 @@ else{
   }
 
 function lostPass() {
+    modal.style.display = "none";
     passModal.style.display = "block";
     document.getElementById("myform5").reset();
 

@@ -68,11 +68,6 @@
 			</div>
 	</div>
 
-													<!-- Login Modal -->
-
-										<!--                                       carousel                   --->
-
-
 	<script type="text/javascript" src="jquery.min.js"></script>
     <script src="js/javascript.js"></script>
 </body>
