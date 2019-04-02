@@ -10,6 +10,10 @@
 	if($row = mysqli_fetch_assoc($result))
 	{
 		$_SESSION["ss_user"] = $row['username'];
+		$s= "select src_img from details where name='$id'";
+		$src = mysqli_query($con,$s) or die(mysqli_error($con));
+		$img = mysqli_fetch_assoc($src);
+		$_SESSION["ss_src_img"] = $img['src_img'];
 		if($row['type'])
 		{
 			$_SESSION['ss_type'] = 1;

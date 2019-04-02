@@ -84,7 +84,7 @@
             <th style="width:20%"></th>
         </tr>
         <tr>
-            <th>Sl</th>
+            <th>Sl<?php $sl=1?></th>
             <th>Name</th>
             <th>Reg. No.</th>
             <th>Roll. No.</th>
@@ -95,7 +95,7 @@
             {
         ?>
         <tr>
-            <td><?php echo $row['sl']; ?></td>
+            <td><?php echo $sl; $sl=$sl+1; ?></td>
             <td><?php echo $row['name']; ?></td>
             <td><?php echo $row['reg_no']; ?></td> 
             <td><?php echo $row['roll_no']; ?></td>
@@ -113,7 +113,7 @@
             <th style="width:20%"></th>
         </tr>
         <tr>
-            <th>Sl</th>
+            <th>Sl<?php $sl=1;?></th>
             <th>Name</th>
             <th>Reg. No.</th>
             <th>Roll. No.</th>
@@ -126,7 +126,7 @@
             {
         ?>
         <tr>
-            <td><?php echo $row['sl']; ?></td>
+            <td><?php echo $sl;$sl=$sl+1 ?></td>
             <td><?php echo $row['name']; ?></td>
             <td><?php echo $row['reg_no']; ?></td> 
             <td><?php echo $row['roll_no']; ?></td>
@@ -144,7 +144,7 @@
             <th style="width:20%"></th>
         </tr>
         <tr>
-            <th>Sl</th>
+            <th>Sl<?php $sl=1?></th>
             <th>Name</th>
             <th>Reg. No.</th>
             <th>Roll. No.</th>
@@ -157,7 +157,7 @@
             {
         ?>
         <tr>
-            <td><?php echo $row['sl']; ?></td>
+            <td><?php echo $sl;$sl=$sl+1 ?></td>
             <td><?php echo $row['name']; ?></td>
             <td><?php echo $row['reg_no']; ?></td> 
             <td><?php echo $row['roll_no']; ?></td>

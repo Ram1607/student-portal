@@ -954,6 +954,37 @@ function lostPass() {
 
 }
 
+function securityQue() {
+    var q = document.getElementById("select_que");
+    q = q.value;
+    var a = document.getElementById("answer");
+    a = a.value;
+    var user = document.getElementById("ch_user");
+    user = user.value;
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200) {
+            var status = this.responseText;
+            console.log(this.responseText);
+            if(status == '1') {
+                console.log(status);
+                document.getElementById("select_que").style.display = "none";
+                document.getElementById("ch_user").style.display = "none";
+                document.getElementById("answer").style.display = "none";
+                document.getElementById("ch_pass").style.display = "initial";
+                document.getElementById("ch_conpass").style.display = "initial";
+                document.getElementById("ch_btn").style.display = "none";
+                document.getElementById("ch_sub").style.display = "initial";
+            } else {
+
+            }
+        }
+    };
+    xhttp.open("GET", "pass_recovery.php?user="+user+"&&q="+q+"&&a="+a, true);
+    xhttp.send();
+}
+
 
 
 

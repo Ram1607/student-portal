@@ -67,6 +67,7 @@
 				</div>
 			</div>
 	</div>
+	<img src="uploads/<?php echo $_SESSION['ss_src_img'];?>"/>
 
 	<script type="text/javascript" src="jquery.min.js"></script>
     <script src="js/javascript.js"></script>

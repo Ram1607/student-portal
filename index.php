@@ -65,11 +65,19 @@
 						<li><a href="#">Notice</a></li>
 						<li class="drop-down">
 		                <a href="#">Download</a>
-		                </li>
+						</li>
+						<?php if(!isset($_SESSION['ss_user'])){?>
 						<li id="signupBtn" style="float:right"><a>Sign Up</a></li>
 						<li id="myBtn" style="float:right"><a>Login</a></li>
+						<?php } else {	?>
+						<li style="float:right"><a href="logout.php" id="logoutbtn">logout</a></li>
+						<li style="float:right;bottom-paading:10px;">welcome <?php echo $_SESSION['ss_user']; ?> / </li>
+						<?php
+						}
+						?>
 					</ul>
 				</div>
+				<a id="myBtn"></a><a id="signupBtn"></a>
 			</div>
 	</div>
 
@@ -120,10 +128,14 @@
 					<div class="app-title">
 						<h1>Password Recovery</h1>
 					</div>
-					<form method="post" action="pass_recovery.php" id="myform5">
+					<form method="post" action="pass_change.php" id="myform5">
 						<div class="login-form">
+							<div class="control-group">
+									<input type="text" class="login-field" value="" placeholder="Username" id="ch_user" name="user">
+									<label class="login-field-icon fui-lock" for="login-pass"></label>
+							</div>
 							<div class="control-group" class=dropdown>
-								<SELECT class="login-field" id="select" name="question">
+								<SELECT class="login-field" id="select_que" name="question">
 
 								<OPTION  style="text-align: center;" Value="">Select your security question</OPTION>
 								<OPTION Value="0" style="color:black;">What is your nick name?</OPTION>
@@ -141,7 +153,20 @@
 									<label class="login-field-icon fui-lock" for="login-pass"></label>
 							</div>
 
-							<input type="submit" class="btn btn-primary btn-large btn-block"  style="background-color:#1c2b4b" value="Submit"/>
+							<div class="control-group">
+									<input type="password" class="login-field" value="" onclick="pash()" placeholder="Password" id="ch_pass" name="password" style="display:none;">
+									<label class="login-field-icon fui-user" for="login-name"></label>
+									<span class="error_modal" style="display:none" id="error_ch_pass">Hey! Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character is required</span>
+							</div>
+
+							<div class="control-group">
+									<input type="password" class="login-field" value="" onclick="conpash()" placeholder="Confirm Password" id="ch_conpass" style="display:none;">
+									<label class="login-field-icon fui-user" for="login-name"></label>
+									<span class="error_modal" style="display:none" id="error_ch_confirm">Password is not matched</span>
+							</div>
+
+							<input type="button" id="ch_btn" class="btn btn-primary btn-large btn-block" onclick="securityQue()" style="background-color:#1c2b4b;" value="Next"/>
+							<input type="submit" id="ch_sub" class="btn btn-primary btn-large btn-block"  style="background-color:#1c2b4b;display:none" value="Submit"/>
 						</div>
 					</form>
 				</div>
@@ -413,7 +438,7 @@
 										</div>
 
 										<div class="control-group" class=dropdown>
-											<SELECT class="login-field" id="select" name="question">
+											<SELECT class="login-field" id="select_reg_question" name="reg_question">
 
 											<OPTION  style="text-align: center;" Value="">Select your security question</OPTION>
 											<OPTION Value="0" style="color:black;">What is your nick name?</OPTION>
@@ -427,7 +452,7 @@
 										</div>
 
 										<div class="control-group">
-												<input type="text" class="login-field" value="" placeholder="Answer" id="answer" name="answer">
+												<input type="text" class="login-field" value="" placeholder="Answer" id="reg_answer" name="reg_answer">
 												<label class="login-field-icon fui-lock" for="login-pass"></label>
 										</div>
 
@@ -537,7 +562,7 @@
 							<div class="flip-box">
 			  					<div class="flip-box-inner">
 			    					<div class="flip-box-front">
-			   							<img src="images/Pradum.jpg"></img>
+			   							<img src="images/Pradum.jpg"/>
 									</div>
 			    					<div class="flip-box-back">
 										<br>
@@ -553,7 +578,7 @@
 							<div class="flip-box">
 			  					<div class="flip-box-inner">
 			    					<div class="flip-box-front">
-			   							<img src="images/SaiRam.jpg"></img>
+			   							<img src="images/SaiRam.jpg"/>
 									</div>
 			    					<div class="flip-box-back">
 									<br>
@@ -570,7 +595,7 @@
 							<div class="flip-box">
 			  					<div class="flip-box-inner">
 			    					<div class="flip-box-front">
-			   							<img src="images/Ankit.jpg"></img>
+			   							<img src="images/Ankit.jpg"/>
 									</div>
 			    					<div class="flip-box-back">
 										<br>
