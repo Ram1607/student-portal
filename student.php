@@ -3,8 +3,15 @@
 	if(!isset($_SESSION['ss_user'])||$_SESSION['ss_type']!=0)
 	{
 		$_SESSION['ss_e'] = 1;
-		echo "<script>window.location='http://localhost/Project/student-portal';</script>";
+		echo "<script>window.location='http://localhost:86/student-portal';</script>";
 	}
+	$id=$_SESSION['ss_user'];
+    $con = mysqli_connect('localhost','root','','student-portal',3307) or die("Server can't connect try again");
+    mysqli_select_db($con,'student-portal') or die("Database not found!!");
+
+    $s = "SELECT * FROM details WHERE name='$id'";
+    $result = mysqli_query($con,$s) or die(mysqli_error($con));
+    $student=mysqli_fetch_assoc($result);
 ?>
 <!DOCTYPE html>
 <html lang="en" >
@@ -41,6 +48,8 @@
 
  <link rel="stylesheet" href="css/style.css">
 
+  <link rel="stylesheet" href="css/admin.css">
+
 </head>
 
 <body style="background-color:#1c2b4b">
@@ -67,7 +76,149 @@
 				</div>
 			</div>
 	</div>
-	<img src="uploads/<?php echo $_SESSION['ss_src_img'];?>"/>
+
+<br>
+<br>
+
+	<img style=" margin-left: 43%;
+				 height: 175px;
+				 width:175px;
+	             " src="uploads/<?php echo $_SESSION['ss_src_img'];?>"/>
+
+<br>
+<br>
+
+
+    <table class="table" style="width: 60%">
+      <thead>
+        <tr>
+
+            <th>Personal Details</th>
+
+        </tr>
+      </thead>
+    </table >
+
+
+    <table class="table" style="width: 60%">
+      <tbody>
+        <tr>
+            <th>Name</th>
+            <td><?php echo $student['name']; ?></td>
+        </tr>
+       	<tr>
+       		<th>Father name</th>
+       		<td><?php echo $student['f_name']; ?></td> 
+       	</tr>
+       	<tr>
+       		<th >Mother Name</th>
+       		<td><?php echo $student['m_name']; ?></td>
+       	</tr>
+       	<tr>
+       		<th>Date of Birth</th>
+       		<td><?php echo $student['dob']; ?></td>
+       	</tr>
+        
+        <tr>
+        	<th> Gender</th>
+        	<td><?php echo $student['gender']; ?></td>
+        </tr>  
+            
+        <tr>
+        	<th>Nationality</th>
+        	<td><?php echo $student['nationality']; ?></td>
+
+        </tr>
+
+
+      </tbody>
+    </table>
+
+<br>
+<br>
+
+    <table class="table" style="width: 60%">
+      <thead>
+        <tr>
+
+            <th>Education Details</th>
+
+        </tr>
+      </thead>
+    </table >
+
+
+    <table class="table" style="width: 60%">
+      <tbody>
+        <tr>
+            <th>Registration no.</th>
+            <td><?php echo $student['reg_no']; ?></td>
+        </tr>
+       	<tr>
+       		<th>Roll no.</th>
+       		<td><?php echo $student['roll_no']; ?></td> 
+       	</tr>
+       	<tr>
+       		<th >Department</th>
+       		<td><?php echo $student['department']; ?></td>
+       	</tr>
+       	<tr>
+       		<th> Tenth Marks</th>
+       		<td><?php echo $student['marks_10']; ?></td>
+       	</tr>
+        
+        <tr>
+        	<th> +2 Marks</th>
+        	<td><?php echo $student['marks_12']; ?></td>
+        </tr>  
+            
+        <tr>
+        	<th>CGPA</th>
+        	<td><?php echo $student['cgpa']; ?></td>
+
+        </tr>
+
+
+      </tbody>
+    </table>
+
+<br>
+<br>
+
+    <table class="table" style="width: 60%">
+      <thead>
+        <tr>
+
+            <th>Others</th>
+
+        </tr>
+      </thead>
+    </table >
+
+
+    <table class="table" style="width: 60%">
+      <tbody>
+        <tr>
+            <th>Contact</th>
+            <td><?php echo $student['contact']; ?></td>
+        </tr>
+       	<tr>
+       		<th>Email</th>
+       		<td><?php echo $student['email']; ?></td> 
+       	</tr>
+       	<tr>
+       		<th >Permanent Address</th>
+       		<td><?php echo $student['per_address']; ?></td>
+       	</tr>
+       	<tr>
+       		<th>Correspondent Address</th>
+       		<td><?php echo $student['cor_address']; ?></td>
+       	</tr>
+        
+
+
+      </tbody>
+    </table>
 
 	<script type="text/javascript" src="jquery.min.js"></script>
     <script src="js/javascript.js"></script>

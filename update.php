@@ -3,7 +3,7 @@
 	
     $action = $_REQUEST['q'];
     $reg_no = $_REQUEST['reg'];
-    $con = mysqli_connect('localhost','pradum','Aqzplm@123','student-portal',3307) or die("Server can't connect try again");
+    $con = mysqli_connect('localhost','root','','student-portal',3307) or die("Server can't connect try again");
 	mysqli_select_db($con,'student-portal') or die("Database not found!!");
 	if($action == "acc")
     {
