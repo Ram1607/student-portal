@@ -2,7 +2,7 @@
 	session_start();
 	$user = $_REQUEST['user'];
 	$password = $_REQUEST['password'];
-	$con = mysqli_connect('localhost','root','','student-portal',3307) or die("Server can't connect try again");
+	$con = mysqli_connect('localhost','pradum','Aqzplm@123','student-portal',3307) or die("Server can't connect try again");
 	mysqli_select_db($con,'student-portal') or die("Database not found!!");
 	$s = "UPDATE details SET password='$password' WHERE name='$user'";
     $result = mysqli_query($con,$s) or die(mysqli_error($con));
@@ -16,5 +16,5 @@
 	{
         echo "<script>alert('Failed to change password Try Again Later');</script>";
 	}
-	echo "<script>window.location='http://localhost:86/student-portal/';</script>";
+	echo "<script>window.location='http://localhost/Project/student-portal/';</script>";
 ?>

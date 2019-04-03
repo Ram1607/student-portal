@@ -3,9 +3,9 @@
     if(!isset($_SESSION['ss_user'])||$_SESSION['ss_type']!=1)
     {
         $_SESSION['ss_e'] = 1;
-        echo "<script>window.location='http://localhost:86/student-portal';</script>";
+        echo "<script>window.location='http://localhost/Project/student-portal';</script>";
     }
-    $con = mysqli_connect('localhost','root','','student-portal',3307) or die("Server can't connect try again");
+    $con = mysqli_connect('localhost','pradum','Aqzplm@123','student-portal',3307) or die("Server can't connect try again");
     mysqli_select_db($con,'student-portal') or die("Database not found!!");
     $s = "SELECT * FROM details WHERE active=0";
     $result = mysqli_query($con,$s) or die(mysqli_error($con));
