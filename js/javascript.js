@@ -182,8 +182,16 @@ document.getElementById("cgpa").value=null;
 }
 
 function reset2(){
-    
-    errors2();
+    document.getElementById("contact").value=null;
+document.getElementById("email").value=null;
+
+document.getElementById("peraddress").value=null;
+document.getElementById("corraddress").value=null;
+document.getElementById("pass").value=null;
+document.getElementById("conpass").value=null;
+
+document.getElementById("reg_answer").value=null;
+
 }
 
 function previous1(){
@@ -1065,8 +1073,8 @@ function errors2(){
     error_corr.style.display="none";
     error_pass.style.display="none";
     error_confirm.style.display="none";
-    error_ans.style.display="block";
-    error_select.style.display="block";
+    error_ans.style.display="none";
+    error_select.style.display="none";
 }
 
 

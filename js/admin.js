@@ -12,8 +12,6 @@ function ajaxreq(str,reg_no) {
   }
 
 function edit1(){
-    document.getElementById('sd_name').style.display = "none";
-    document.getElementById('ed_name').style.display = "initial";
     document.getElementById('sd_fname').style.display = "none";
     document.getElementById('ed_fname').style.display = "initial";
     document.getElementById('sd_mname').style.display = "none";

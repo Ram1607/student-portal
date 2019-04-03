@@ -8,7 +8,7 @@
 		}
 		unset($_SESSION['ss_e']);
 	}
-	$con = mysqli_connect('localhost','pradum','Aqzplm@123','student-portal',3307) or die("Server can't connect try again");
+	$con = mysqli_connect('localhost','root','','student-portal',3307) or die("Server can't connect try again");
 	mysqli_select_db($con,'student-portal') or die("Database not found!!");
 	
 ?>
@@ -58,6 +58,8 @@
 
  <link rel="stylesheet" href="css/style.css">
 
+ <link rel="stylesheet" href="css/admin.css">
+
 </head>
 
 <body style="background-color:#1c2b4b">
@@ -75,15 +77,16 @@
 				<div class="nav-menu">
 					<ul>
 						<li><a href="#">Home</a></li>
-						<li><a href="#aboutus">About Us</a></li>
 						<li><a href="#notice_table">Notice</a></li>
-						<li class="drop-down">
+						<li><a href="#aboutus">About Us</a></li>
+						<!--<li class="drop-down">
 		                <a href="#">Download</a>
-						</li>
+						</li>-->
 						<?php if(!isset($_SESSION['ss_user'])){?>
 						<li id="signupBtn" style="float:right"><a>Sign Up</a></li>
 						<li id="myBtn" style="float:right"><a>Login</a></li>
 						<?php } else {	?>
+						<li id="profile" ><a<?php if($_SESSION['ss_type']==1){?> href="http://localhost:86/student-portal/admin.php"<?php } else {?> href="http://localhost:86/student-portal/student.php"<?php } ?>>Dashboard</a></li>
 						<li style="float:right"><a href="logout.php" id="logoutbtn">logout</a></li>
 						<li style="float:right;bottom-paading:10px;">welcome <?php echo $_SESSION['ss_user']; ?> / </li>
 						<?php
@@ -525,37 +528,28 @@
             </div>
     </div>
 
-    <br id="notice_table">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <table class="table" >
+    <div id="notice_table">
+    	<br>
+    	<br>
+    	<br>
+    	<br>
+    	<br>
+    	<br>
+    	<br>
+    	<br>
+    	<br>
+    	<br>
+    	<br>
+
+
+    <table class="table" style="width: 100%;" >
       <thead>
         <tr>
             <th style="width: 100%">Notice</th>
         </tr>
       </thead>
     </table >
-    <table class="table">
+    <table class="table" style="width: 100%;" >
       <tbody>
 	    <?php 
 	    	$s = "SELECT * FROM notice WHERE target='0'";
@@ -573,13 +567,8 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 
-
+	</div>
 
 
 
