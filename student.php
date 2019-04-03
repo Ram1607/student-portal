@@ -80,6 +80,30 @@
 
 <br>
 <br>
+                                          <!-- notice -->
+<table class="table" >
+      <thead>
+        <tr>
+            <th style="width: 100%">Notice</th>
+        </tr>
+      </thead>
+    </table >
+    <table class="table">
+      <tbody>
+      <?php 
+        $reg = $student['reg_no'];
+        $s = "SELECT * FROM notice WHERE target='0' or target='$reg'";
+        $result = mysqli_query($con,$s) or die(mysqli_error($con));
+      while($row = mysqli_fetch_assoc($result))
+      {
+      ?>
+        <tr>
+            <th><?php echo $row["notice"]?></th>
+        </tr>
+    <?php } ?>
+      </tbody>
+    </table>
+
 
 	<img style=" margin-left: 43%;
 				 height: 175px;

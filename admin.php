@@ -90,7 +90,32 @@
 
   <br>
   <br>
+  <form action="notice_process.php" method="post" id="notice_form">
+  <table class="table">
+      <thead>
+        <tr>
 
+            <th style="width: 80%">Notice</th>
+            <th style="width: 20%"><input type="submit" name="submit" id="submit_notice_form" value="Submit" style="background-color:blue"></th>
+
+        </tr>
+      </thead>
+    </table >
+    <table class="table">
+      <tbody>
+        <tr>
+            <th>Notice</th>
+            <th>Target (0-ALL; 1-Student; registraion number for particular student)</th>
+        </tr>
+        <tr>
+            <td style="width: 70%;"><textarea name="notice" style="width: 70%"></textarea></td>
+            <td style="width: 30%;"><input type="text" name="target" value="" style="width: 70%"></td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+<br>
+<br>
 
     <div>
       <table class="table">
