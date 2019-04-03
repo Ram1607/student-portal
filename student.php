@@ -92,19 +92,20 @@
     <table class="table" style="width: 60%">
       <thead>
         <tr>
+        	<th style="width: 80%; padding-left: 30%;" >  Personal Details   </th>
+            <th style="width: 20%">     <button class ="btn-change" onclick="edit1()">Edit</button>  </th>
 
-            <th>Personal Details</th>
 
         </tr>
       </thead>
     </table >
 
 
-    <table class="table" style="width: 60%">
+    <table class="table" style="width: 60%" id="edit1">
       <tbody>
         <tr>
             <th>Name</th>
-            <td><?php echo $student['name']; ?></td>
+            <td ><?php echo $student['name']; ?></td>
         </tr>
        	<tr>
        		<th>Father name</th>
@@ -141,18 +142,19 @@
       <thead>
         <tr>
 
-            <th>Education Details</th>
+            <th style="width: 80%; padding-left: 30%;" >Education Details</th>
+            <th style="width: 20%">     <button class ="btn-change" onclick="edit2()">Edit</button>  </th>
 
         </tr>
       </thead>
     </table >
 
 
-    <table class="table" style="width: 60%">
+    <table class="table" style="width: 60%" id=edit2>
       <tbody>
         <tr>
-            <th>Registration no.</th>
-            <td><?php echo $student['reg_no']; ?></td>
+            <th>Registration no.  </th>
+            <td ><?php echo $student['reg_no']; ?></td>
         </tr>
        	<tr>
        		<th>Roll no.</th>
@@ -189,14 +191,15 @@
       <thead>
         <tr>
 
-            <th>Others</th>
+            <th style="width: 80%; padding-left: 30%;" >Others</th>
+            <th style="width: 20%">     <button class ="btn-change" onclick="edit3()">Edit</button>  </th>
 
         </tr>
       </thead>
     </table >
 
 
-    <table class="table" style="width: 60%">
+    <table class="table" style="width: 60%" id="edit3">
       <tbody>
         <tr>
             <th>Contact</th>

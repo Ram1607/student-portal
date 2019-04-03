@@ -42,6 +42,17 @@
 
   </style>  
 
+  <script type="text/javascript">
+		function download(){
+		    var a = document.body.appendChild(
+		        document.createElement("a")
+		    );
+		    a.download = "export.html";
+		    a.href = "data:text/html," + document.getElementById("content12").innerHTML;
+		    a.click();
+		}
+  </script>
+
  <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -99,6 +110,7 @@
 							<div class="control-group">
 									<input type="text" class="login-field" value="" placeholder="username" id="login-name" name="username">
 									<label class="login-field-icon fui-user" for="login-name"></label>
+									<span class="error_modal" style="display:none" id="error_login_name">Name is required (only alphabets)</span>
 							</div>
 
 							<div class="control-group">
@@ -610,7 +622,15 @@
         </div>
     </div>
 
+<div id="content12">
+<h1>Hello world</h1>
+<i>Hi everybody</i>
+
 </div>
+
+<button onclick()="download()">hey</button>
+
+
 
 	<script type="text/javascript" src="jquery.min.js"></script>
     <script src="js/javascript.js"></script>
