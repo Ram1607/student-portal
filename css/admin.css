@@ -34,6 +34,18 @@ table th,table td {
     border-radius: 5px;
   margin-left: 37%;
 }
+#submit_notice_form {
+  height:25px;
+  width:50px;
+    background: lightseagreen;
+    float: left;
+    box-shadow: 0 0 1px #ccc;
+    -webkit-transition: all 0.5s ease-in-out;
+    border: 0px;
+    color: #fff;
+    border-radius: 5px;
+  margin-left: 37%; 
+}
 .btn-change:hover{
     -webkit-transform: scale(1.1);
     background: #31708f;

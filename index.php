@@ -8,6 +8,9 @@
 		}
 		unset($_SESSION['ss_e']);
 	}
+	$con = mysqli_connect('localhost','pradum','Aqzplm@123','student-portal',3307) or die("Server can't connect try again");
+	mysqli_select_db($con,'student-portal') or die("Database not found!!");
+	
 ?>
 <!DOCTYPE html>
 <html lang="en" >
@@ -73,7 +76,7 @@
 					<ul>
 						<li><a href="#">Home</a></li>
 						<li><a href="#aboutus">About Us</a></li>
-						<li><a href="#">Notice</a></li>
+						<li><a href="#notice_table">Notice</a></li>
 						<li class="drop-down">
 		                <a href="#">Download</a>
 						</li>
@@ -522,6 +525,7 @@
             </div>
     </div>
 
+    <br id="notice_table">
     <br>
     <br>
     <br>
@@ -544,7 +548,28 @@
     <br>
     <br>
     <br>
-    <br>
+    <table class="table" >
+      <thead>
+        <tr>
+            <th style="width: 100%">Notice</th>
+        </tr>
+      </thead>
+    </table >
+    <table class="table">
+      <tbody>
+	    <?php 
+	    	$s = "SELECT * FROM notice WHERE target='0'";
+	    	$result = mysqli_query($con,$s) or die(mysqli_error($con));
+			while($row = mysqli_fetch_assoc($result))
+			{
+	    ?>
+        <tr>
+            <th><?php echo $row["notice"]?></th>
+        </tr>
+    <?php } ?>
+      </tbody>
+    </table>
+  
     <br>
     <br>
     <br>
@@ -626,14 +651,7 @@
         </div>
     </div>
 
-<div id="content12">
-<h1>Hello world</h1>
-<i>Hi everybody</i>
-
 </div>
-
-<button onclick()="download()">hey</button>
-
 
 
 	<script type="text/javascript" src="jquery.min.js"></script>
