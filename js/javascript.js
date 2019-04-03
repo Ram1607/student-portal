@@ -29,6 +29,7 @@ var span4 = document.getElementsByClassName("close4")[0];
 var span5 = document.getElementsByClassName("close5")[0]
 
 btn.onclick = function() {
+    errors3();
     modal.style.display = "block";
     document.getElementById("myform0").reset();
 
@@ -86,15 +87,12 @@ window.onclick = function(event) {
 signupbtn.onclick = function() {
     signup.style.display = "block";
     document.getElementById("myform").reset();
-    document.getElementById("myform1").reset();
-    document.getElementById("myform2").reset();
-
     errors();
     errors1();
     errors2();
-    common_error.style.display="none";
-    common_erro.style.display="none";
-    common_err.style.display="none";
+    reset1();
+    reset2();
+
 
 }
 
@@ -144,17 +142,47 @@ function showSlides() {
 }
 
 function reset(){
-    document.getElementById("myform").reset();
+
+
+ document.getElementById("f_name").value=null;
+
+document.getElementById("reg_name").value=null;
+
+
+document.getElementById("m_name").value=null;
+
+ document.getElementById("dob").value=null;
+
+document.getElementById("nationality").value=null;
+
+document.getElementById('male').checked=false;
+
+document.getElementById('male').checked=false;
     errors();
+
+
 }
 
 function reset1(){
-    document.getElementById("myform1").reset();
+    
+ document.getElementById("regno").value=null;
+
+document.getElementById("roll").value=null;
+
+var e = document.getElementById("select");
+ e.options[e.selectedIndex].value="";
+
+document.getElementById("tenth").value=null;
+
+document.getElementById("twelve").value=null;
+
+document.getElementById("cgpa").value=null;
     errors1();
+    enable();
 }
 
 function reset2(){
-    document.getElementById("myform2").reset();
+    
     errors2();
 }
 
@@ -178,6 +206,7 @@ function errors(){
     error_dob.style.display="none";
     error_gender.style.display="none";
     error_nationality.style.display="none";
+
 }
 
 var error_reg_name = document.getElementById("error_reg_name");
@@ -199,26 +228,63 @@ var regex=/^[a-zA-Z_ ]*$/;
 function regi(){
     errors();
 
-
 }
+
+function disable(){
+        document.getElementById("reg_name").disabled=true;
+   
+        document.getElementById("m_name").disabled = true;
+
+        document.getElementById("f_name").disabled=true;
+
+
+        document.getElementById("dobi").disabled=true;
+        document.getElementById("dob").disabled=true;
+
+        document.getElementById("male").disabled=true;
+        document.getElementById("female").disabled=true;
+
+        document.getElementById("nationality").disabled=true;
+}
+
+function enable(){
+
+        document.getElementById("reg_name").disabled=false;
+       
+        document.getElementById("m_name").disabled = false;
+
+        document.getElementById("f_name").disabled=false;
+
+        document.getElementById("dob").disabled=false;
+
+        document.getElementById("male").disabled=false;
+        document.getElementById("female").disabled=false;
+
+        document.getElementById("nationality").disabled=false;
+}
+
+
 
 function fname(){
 
 var reg_name = document.getElementById("reg_name").value;
-
     errors();
 
     if(!(reg_name.length>0) || !(reg_name.match(regex)) )
     {
         error_reg_name.style.display="block";
+        disable();
+        document.getElementById("reg_name").disabled=false;
     }
-    else
-    {
-        error_reg_name.style.display="none";
 
+    else{
+        
+        enable();
     }
-    
 }
+
+
+
 
 function mname(){
 
@@ -227,18 +293,24 @@ function mname(){
 var reg_name = document.getElementById("reg_name").value;
 var f_name = document.getElementById("f_name").value;
 
+
+
     if(!(reg_name.length>0) || !(reg_name.match(regex)) ){
-        errors();
         error_reg_name.style.display="block";
+        disable();
+        document.getElementById("reg_name").disabled=false;
     }
     else if(!(f_name.length>0) || !(f_name.match(regex)))
     {
         error_f_name.style.display="block";
-        common_error.style.display="none";
+        disable();
+        document.getElementById("reg_name").disabled=false;
+        document.getElementById("f_name").disabled=false;
+
     }
     else
     {
-        error_f_name.style.display="none";
+        enable();
 
     }
     
@@ -256,23 +328,31 @@ var reg_name = document.getElementById("reg_name").value;
 
 var m_name = document.getElementById("m_name").value;
 
-    if( !(reg_name.length>0) || !(reg_name.match(regex))){
-        errors();
+    if(!(reg_name.length>0) || !(reg_name.match(regex)) ){
         error_reg_name.style.display="block";
-
+        disable();
+        document.getElementById("reg_name").disabled=false;
     }
-    else if(!(f_name.length>0) || !(f_name.match(regex))){
-        errors();
+    else if(!(f_name.length>0) || !(f_name.match(regex)))
+    {
         error_f_name.style.display="block";
+        disable();
+        document.getElementById("reg_name").disabled=false;
+        document.getElementById("f_name").disabled=false;
+
     }
     else if(!(m_name.length>0) || !(m_name.match(regex)))
     {
         error_m_name.style.display="block";
+        disable();
+        document.getElementById("reg_name").disabled=false;
+        document.getElementById("f_name").disabled=false;
+         document.getElementById("m_name").disabled=false;       
 
     }
     else
     {
-        error_m_name.style.display="none";
+        enable();
 
     }
     
@@ -282,6 +362,8 @@ function fmale(){
 
     errors();
 
+
+
 var f_name = document.getElementById("f_name").value;
 
 var reg_name = document.getElementById("reg_name").value;
@@ -290,29 +372,40 @@ var m_name = document.getElementById("m_name").value;
 
 var dob = document.getElementById("dob").value;
 
-    if(!(reg_name.length>0) || !(reg_name.match(regex)))
-    {
-        errors();
+    if(!(reg_name.length>0) || !(reg_name.match(regex)) ){
         error_reg_name.style.display="block";
+        disable();
+        document.getElementById("reg_name").disabled=false;
     }
-    else if(!(f_name.length>0) || !(f_name.match(regex))){
-        errors();
-        error_f_name.style.display="block";
-    }
-    else if(!(m_name.length>0) || !(m_name.match(regex)) ){
-        errors();
-        error_m_name.style.display="block";        
-    }
-    else if(dob)
+    else if(!(f_name.length>0) || !(f_name.match(regex)))
     {
-        errors();
-        error_dob.style.display="none";
+        error_f_name.style.display="block";
+        disable();
+        document.getElementById("reg_name").disabled=false;
+        document.getElementById("f_name").disabled=false;
 
     }
-    else
+    else if(!(m_name.length>0) || !(m_name.match(regex)))
+    {
+        error_m_name.style.display="block";
+        disable();
+        document.getElementById("reg_name").disabled=false;
+        document.getElementById("f_name").disabled=false;
+         document.getElementById("m_name").disabled=false;       
+
+    }
+    else if(!(dob))
     {
         error_dob.style.display="block";
+        enable();
+        document.getElementById("male").disabled=true;
+        document.getElementById("female").disabled=true;
 
+        document.getElementById("nationality").disabled=true;
+
+    }
+    else{
+        enable();
     }
     
 }
@@ -321,6 +414,8 @@ function ffemale(){
 
     errors();
 
+
+
 var f_name = document.getElementById("f_name").value;
 
 var reg_name = document.getElementById("reg_name").value;
@@ -329,29 +424,40 @@ var m_name = document.getElementById("m_name").value;
 
 var dob = document.getElementById("dob").value;
 
-    if(!(reg_name.length>0) || !(reg_name.match(regex)))
-    {
-        errors();
+    if(!(reg_name.length>0) || !(reg_name.match(regex)) ){
         error_reg_name.style.display="block";
+        disable();
+        document.getElementById("reg_name").disabled=false;
     }
-    else if(!(f_name.length>0) || !(f_name.match(regex))){
-        errors();
-        error_f_name.style.display="block";
-    }
-    else if(!(m_name.length>0) || !(m_name.match(regex)) ){
-        errors();
-        error_m_name.style.display="block";        
-    }
-    else if(dob)
+    else if(!(f_name.length>0) || !(f_name.match(regex)))
     {
-        errors();
-        error_dob.style.display="none";
+        error_f_name.style.display="block";
+        disable();
+        document.getElementById("reg_name").disabled=false;
+        document.getElementById("f_name").disabled=false;
 
     }
-    else
+    else if(!(m_name.length>0) || !(m_name.match(regex)))
+    {
+        error_m_name.style.display="block";
+        disable();
+        document.getElementById("reg_name").disabled=false;
+        document.getElementById("f_name").disabled=false;
+         document.getElementById("m_name").disabled=false;       
+
+    }
+    else if(!(dob))
     {
         error_dob.style.display="block";
+        enable();
+        document.getElementById("male").disabled=true;
+        document.getElementById("female").disabled=true;
 
+        document.getElementById("nationality").disabled=true;
+
+    }
+    else{
+        enable();
     }
     
 }
@@ -361,6 +467,8 @@ function nation(){
 
     errors();
 
+
+
 var f_name = document.getElementById("f_name").value;
 
 var reg_name = document.getElementById("reg_name").value;
@@ -372,34 +480,48 @@ var dob = document.getElementById("dob").value;
 
 
 
-    if(!(reg_name.length>0) || !(reg_name.match(regex)))
-    {
-        errors();
-        error_reg_name.style.display="block";
-    }
-    else if(!(f_name.length>0) || !(f_name.match(regex))){
-        errors();
-        error_f_name.style.display="block";
-    }
-    else if(!(m_name.length>0) || !(m_name.match(regex)) ){
-        errors();
-        error_m_name.style.display="block";        
-    }
-    else if(!dob)
-    {
-        errors();
-        error_dob.style.display="block";
-    }
-    else if(document.getElementById('male').checked || document.getElementById('female').checked)
-    {
-        errors();
-        error_gender.style.display="none";
 
+    if(!(reg_name.length>0) || !(reg_name.match(regex)) ){
+        error_reg_name.style.display="block";
+        disable();
+        document.getElementById("reg_name").disabled=false;
+    }
+    else if(!(f_name.length>0) || !(f_name.match(regex)))
+    {
+        error_f_name.style.display="block";
+        disable();
+        document.getElementById("reg_name").disabled=false;
+        document.getElementById("f_name").disabled=false;
+
+    }
+    else if(!(m_name.length>0) || !(m_name.match(regex)))
+    {
+        error_m_name.style.display="block";
+        disable();
+        document.getElementById("reg_name").disabled=false;
+        document.getElementById("f_name").disabled=false;
+         document.getElementById("m_name").disabled=false;       
+
+    }
+    else if(!(dob))
+    {
+        error_dob.style.display="block";
+        enable();
+        document.getElementById("male").disabled=true;
+        document.getElementById("female").disabled=true;
+
+        document.getElementById("nationality").disabled=true;
+
+    }
+    else if(!(document.getElementById('male').checked) && !(document.getElementById('female').checked))
+    {
+        error_gender.style.display="block";
+        enable();
+        document.getElementById("nationality").disabled=true;
     }
     else
     {
-        error_gender.style.display="block";
-
+        enable();
     }
     
 }
@@ -407,6 +529,8 @@ var dob = document.getElementById("dob").value;
 function nextb1(){
 
     errors();
+
+
 
 var f_name = document.getElementById("f_name").value;
 
@@ -420,28 +544,47 @@ var dob = document.getElementById("dob").value;
 var nationality = document.getElementById("nationality").value;
 
 
-    if(!(reg_name.length>0) || !(reg_name.match(regex)))
-    {
-        errors();
+    if(!(reg_name.length>0) || !(reg_name.match(regex)) ){
         error_reg_name.style.display="block";
+        disable();
+        document.getElementById("reg_name").disabled=false;
+
     }
-    else if(!(f_name.length>0) || !(f_name.match(regex))){
-        errors();
-        error_f_name.style.display="block";
-    }
-    else if(!(m_name.length>0) || !(m_name.match(regex)) ){
-        errors();
-        error_m_name.style.display="block";        
-    }
-    else if(!dob)
+    else if(!(f_name.length>0) || !(f_name.match(regex)))
     {
-        errors();
+        error_f_name.style.display="block";
+        disable();
+        document.getElementById("reg_name").disabled=false;
+        document.getElementById("f_name").disabled=false;
+
+
+    }
+    else if(!(m_name.length>0) || !(m_name.match(regex)))
+    {
+        error_m_name.style.display="block";
+        disable();
+        document.getElementById("reg_name").disabled=false;
+        document.getElementById("f_name").disabled=false;
+         document.getElementById("m_name").disabled=false;  
+  
+
+    }
+    else if(!(dob))
+    {
         error_dob.style.display="block";
+        enable();
+        document.getElementById("male").disabled=true;
+        document.getElementById("female").disabled=true;
+
+        document.getElementById("nationality").disabled=true;
+
+
     }
     else if(!(document.getElementById('male').checked) && !(document.getElementById('female').checked))
     {
-        errors();
         error_gender.style.display="block";
+        enable();
+        document.getElementById("nationality").disabled=true;
 
     }
     else if(nationality.length>0 && nationality.match(regex))
@@ -488,10 +631,42 @@ var error_twelve = document.getElementById("error_twelve");
 
 var error_cgpa = document.getElementById("error_cgpa");
 
-function reg(){
-    errors1();
+function enable1(){
 
+
+document.getElementById("regno").disabled=false;
+
+document.getElementById("roll").disabled=false;
+
+var e = document.getElementById("select");
+ e.options[e.selectedIndex].disabled=false;
+
+document.getElementById("tenth").disabled=false;
+
+document.getElementById("twelve").disabled=false;
+
+document.getElementById("cgpa").disabled=false;
 }
+
+
+function disable1(){
+
+
+document.getElementById("regno").disabled=true;
+
+document.getElementById("roll").disabled=true;
+
+var e = document.getElementById("select");
+ e.options[e.selectedIndex].disabled=true;
+
+document.getElementById("tenth").disabled=true;
+
+document.getElementById("twelve").disabled=true;
+
+document.getElementById("cgpa").disabled=true;
+}
+
+
 
 function rollyno(){
 
@@ -500,39 +675,84 @@ errors1();
 var regno = document.getElementById("regno").value;
 
 if(regno && regno.match(alpha)){
-    error_reg.style.display="none";
 
+    error_reg.style.display="none";
+    enable1();
 }
 else{
+    
+    disable1();
     error_reg.style.display="block";
+    document.getElementById("regno").disabled=false;
 
 
 }
     
 }
 
-document.getElementById("select").onchange = function()
-{
+function rolly(){
 
 errors1();
 
 var regno = document.getElementById("regno").value;
 
-var roll=document.getElementById("roll").value;
+var roll = document.getElementById("roll").value;
 
 if(!(regno) || !(regno.match(alpha))){
-    errors1();
+
+    disable1();
     error_reg.style.display="block";
+    document.getElementById("regno").disabled=false;
+
 }
 else if(!(roll) || !(roll.match(alpha))){
-    errors1();
+    
     error_roll.style.display="block";
+    disable1();
+    document.getElementById("regno").disabled=false;
+    document.getElementById("roll").disabled=false;
+
+
+}
+else{
+    enable1();
+    errors1();
+}
+
+}
+
+
+
+document.getElementById("select").onchange = function()
+{
+
+
+errors1();
+
+var regno = document.getElementById("regno").value;
+
+var roll = document.getElementById("roll").value;
+
+if(!(regno) || !(regno.match(alpha))){
+
+    disable1();
+    error_reg.style.display="block";
+    document.getElementById("regno").disabled=false;
+
+}
+else if(!(roll) || !(roll.match(alpha))){
+    
+    error_roll.style.display="block";
+    disable1();
+    document.getElementById("regno").disabled=false;
+    document.getElementById("roll").disabled=false;
+
+
 }
 else{
     errors1();
-
-}
-
+    enable1();
+    }
 };
 
 function c_tenth(){
@@ -546,24 +766,51 @@ var roll=document.getElementById("roll").value;
 var e = document.getElementById("select");
 var select = e.options[e.selectedIndex].value;
 
+
+var tenth=document.getElementById("tenth").value;
+
+var twelve=document.getElementById("twelve").value;
+
+var cgpa=document.getElementById("cgpa").value;
+
 if(!(regno) || !(regno.match(alpha))){
-    errors1();
+
+    disable1();
     error_reg.style.display="block";
+    document.getElementById("regno").disabled=false;
+
 }
 else if(!(roll) || !(roll.match(alpha))){
-    errors1();
+    
     error_roll.style.display="block";
+    disable1();
+    document.getElementById("regno").disabled=false;
+    document.getElementById("roll").disabled=false;
+
+
 }
 else if(!(select)){
     errors1();
     error_select.style.display="block";
+    disable1();
+    document.getElementById("regno").disabled=false;
+    document.getElementById("roll").disabled=false;
+
 
 
 }
+else if(!(tenth>0 && tenth<=100)){
+    errors1();
+    error_tenth.style.display="block";
+    enable1();
+    document.getElementById("twelve").disabled=true;
 
+    document.getElementById("cgpa").disabled=true;
+}
 else{
 
     errors1();
+    enable1();
 }
 
 }
@@ -579,29 +826,58 @@ var roll=document.getElementById("roll").value;
 var e = document.getElementById("select");
 var select = e.options[e.selectedIndex].value;
 
+
 var tenth=document.getElementById("tenth").value;
 
+var twelve=document.getElementById("twelve").value;
+
+var cgpa=document.getElementById("cgpa").value;
+
 if(!(regno) || !(regno.match(alpha))){
-    errors1();
+
+    disable1();
     error_reg.style.display="block";
+    document.getElementById("regno").disabled=false;
+
 }
 else if(!(roll) || !(roll.match(alpha))){
-    errors1();
+    
     error_roll.style.display="block";
+    disable1();
+    document.getElementById("regno").disabled=false;
+    document.getElementById("roll").disabled=false;
+
+
 }
 else if(!(select)){
     errors1();
     error_select.style.display="block";
+    disable1();
+    document.getElementById("regno").disabled=false;
+    document.getElementById("roll").disabled=false;
+
 
 
 }
 else if(!(tenth>0 && tenth<=100)){
     errors1();
     error_tenth.style.display="block";
+    enable1();
+    document.getElementById("twelve").disabled=true;
+
+    document.getElementById("cgpa").disabled=true;
 }
 
-else{
+else if(!(twelve>0 && twelve<=100)){
+    errors1();
+    error_twelve.style.display="block";
 
+    enable1();
+
+    document.getElementById("cgpa").disabled=true;
+}
+else{
+    enable1();
     errors1();
 }
 
@@ -620,31 +896,60 @@ var roll=document.getElementById("roll").value;
 var e = document.getElementById("select");
 var select = e.options[e.selectedIndex].value;
 
+
 var tenth=document.getElementById("tenth").value;
 
 var twelve=document.getElementById("twelve").value;
 
+var cgpa=document.getElementById("cgpa").value;
+
 if(!(regno) || !(regno.match(alpha))){
-    errors1();
+
+    disable1();
     error_reg.style.display="block";
+    document.getElementById("regno").disabled=false;
+
 }
 else if(!(roll) || !(roll.match(alpha))){
-    errors1();
+    
     error_roll.style.display="block";
+    disable1();
+    document.getElementById("regno").disabled=false;
+    document.getElementById("roll").disabled=false;
+
+
 }
 else if(!(select)){
     errors1();
     error_select.style.display="block";
+    disable1();
+    document.getElementById("regno").disabled=false;
+    document.getElementById("roll").disabled=false;
+
 
 
 }
 else if(!(tenth>0 && tenth<=100)){
     errors1();
     error_tenth.style.display="block";
+    enable1();
+    document.getElementById("twelve").disabled=true;
+
+    document.getElementById("cgpa").disabled=true;
 }
+
 else if(!(twelve>0 && twelve<=100)){
     errors1();
     error_twelve.style.display="block";
+
+    enable1();
+
+    document.getElementById("cgpa").disabled=true;
+}
+else if(!(cgpa>0 && cgpa<=100)){
+    errors1();
+    error_cgpa.style.display="block";
+
 }
 
 else{
@@ -673,31 +978,51 @@ var twelve=document.getElementById("twelve").value;
 var cgpa=document.getElementById("cgpa").value;
 
 if(!(regno) || !(regno.match(alpha))){
-    errors1();
+
+    disable1();
     error_reg.style.display="block";
+    document.getElementById("regno").disabled=false;
+
 }
 else if(!(roll) || !(roll.match(alpha))){
-    errors1();
+    
     error_roll.style.display="block";
+    disable1();
+    document.getElementById("regno").disabled=false;
+    document.getElementById("roll").disabled=false;
+
+
 }
 else if(!(select)){
     errors1();
     error_select.style.display="block";
+    disable1();
+    document.getElementById("regno").disabled=false;
+    document.getElementById("roll").disabled=false;
+
 
 
 }
 else if(!(tenth>0 && tenth<=100)){
     errors1();
     error_tenth.style.display="block";
+    enable1();
+    document.getElementById("twelve").disabled=false;
+
+    document.getElementById("cgpa").disabled=false;
 }
+
 else if(!(twelve>0 && twelve<=100)){
     errors1();
     error_twelve.style.display="block";
+
+    enable1();
+
+    document.getElementById("cgpa").disabled=false;
 }
 else if(!(cgpa>0 && cgpa<=100)){
     errors1();
     error_cgpa.style.display="block";
-
 
 }
 
@@ -713,6 +1038,20 @@ else{
 function fuck(){
     alert("fewf");
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 
                                                 /* Form Validation for 3rd modal */
@@ -726,6 +1065,8 @@ function errors2(){
     error_corr.style.display="none";
     error_pass.style.display="none";
     error_confirm.style.display="none";
+    error_ans.style.display="block";
+    error_select.style.display="block";
 }
 
 
@@ -743,23 +1084,76 @@ var error_pass = document.getElementById("error_pass");
 
 var error_confirm = document.getElementById("error_confirm");
 
-function con(){
-    errors2();
+var error_ans= document.getElementById("error_ans");
+
+var error_select=document.getElementById("error_select")
+
+
+
+function enable2(){
+document.getElementById("contact").disabled=false;
+document.getElementById("email").disabled=false;
+
+document.getElementById("peraddress").disabled=false;
+document.getElementById("corraddress").disabled=false;
+document.getElementById("pass").disabled=false;
+document.getElementById("conpass").disabled=false;
+
+document.getElementById("reg_answer").disabled=false;
+
+
+
+}
+function disable2(){
+
+document.getElementById("contact").disabled=true;
+document.getElementById("email").disabled=true;
+
+document.getElementById("peraddress").disabled=true;
+document.getElementById("corraddress").disabled=true;
+document.getElementById("pass").disabled=true;
+document.getElementById("conpass").disabled=true;
+
+document.getElementById("reg_answer").disabled=true;
+
 
 }
 
-function eemail(){
-    var contact=document.getElementById("contact").value;
+function con(){
+var contact=document.getElementById("contact").value;
 
 if(contact && contact.length==10){
     error_contact.style.display="none";
+    enable2();
 
 }
 else{
+    disable2();
     error_contact.style.display="block";
-
-
+    document.getElementById("contact").disabled=false;
 }
+}
+function eemail(){
+    var contact=document.getElementById("contact").value;
+
+  var email=document.getElementById("email").value;
+
+if(!(contact) || !(contact.length==10) ){
+    disable2();
+    error_contact.style.display="block";
+    document.getElementById("contact").disabled=false;
+}
+else if(!(email) || !(email.match(regexemail))){
+    error_email.style.display="block";
+    disable2();
+    document.getElementById("contact").disabled=false;
+    document.getElementById("email").disabled=false;
+}
+else{
+    enable2();
+    errors2();
+}
+
 }
 
 function permanent(){
@@ -767,18 +1161,31 @@ function permanent(){
 
     var email=document.getElementById("email").value;
 
-
+    var peraddress=document.getElementById("peraddress").value;
 if(!(contact) || !(contact.length==10) ){
-    errors2();
+    disable2();
     error_contact.style.display="block";
+    document.getElementById("contact").disabled=false;
 }
 else if(!(email) || !(email.match(regexemail))){
-    errors2();
     error_email.style.display="block";
+    disable2();
+    document.getElementById("contact").disabled=false;
+    document.getElementById("email").disabled=false;
 }
+else if(!(peraddress)){
+    errors2();
+    error_perm.style.display="block";
+    disable2();
+    document.getElementById("contact").disabled=false;
+    document.getElementById("email").disabled=false;
+document.getElementById("peraddress").disabled=false;
+
+}
+
 else{
     errors2();
-
+    enable2();
 }
 
 }
@@ -790,21 +1197,39 @@ function corres(){
     var peraddress=document.getElementById("peraddress").value;
 
 if(!(contact) || !(contact.length==10) ){
-    errors2();
+    disable2();
     error_contact.style.display="block";
+    document.getElementById("contact").disabled=false;
 }
 else if(!(email) || !(email.match(regexemail))){
-    errors2();
     error_email.style.display="block";
+    disable2();
+    document.getElementById("contact").disabled=false;
+    document.getElementById("email").disabled=false;
 }
 else if(!(peraddress)){
     errors2();
     error_perm.style.display="block";
+    disable2();
+    document.getElementById("contact").disabled=false;
+    document.getElementById("email").disabled=false;
+document.getElementById("peraddress").disabled=false;
+
+}
+else if(!(corraddress)){
+    errors2();
+    error_corr.style.display="block";
+    disable2();
+    document.getElementById("contact").disabled=false;
+    document.getElementById("email").disabled=false;
+document.getElementById("peraddress").disabled=false;
+document.getElementById("corraddress").disabled=false;
+
 
 }
 else{
     errors2();
-
+    enable2();
 }
 }
 
@@ -818,32 +1243,62 @@ function pash(){
     var peraddress=document.getElementById("peraddress").value;
 
     var corraddress=document.getElementById("corraddress").value;
+    var pass=document.getElementById("pass").value;
 
 if(!(contact) || !(contact.length==10) ){
-    errors2();
+    disable2();
     error_contact.style.display="block";
+    document.getElementById("contact").disabled=false;
 }
 else if(!(email) || !(email.match(regexemail))){
-    errors2();
     error_email.style.display="block";
+    disable2();
+    document.getElementById("contact").disabled=false;
+    document.getElementById("email").disabled=false;
 }
 else if(!(peraddress)){
     errors2();
     error_perm.style.display="block";
+    disable2();
+    document.getElementById("contact").disabled=false;
+    document.getElementById("email").disabled=false;
+document.getElementById("peraddress").disabled=false;
 
 }
 else if(!(corraddress)){
     errors2();
     error_corr.style.display="block";
+    disable2();
+    document.getElementById("contact").disabled=false;
+    document.getElementById("email").disabled=false;
+document.getElementById("peraddress").disabled=false;
+document.getElementById("corraddress").disabled=false;
+
 
 }
+else if(!(pass) || !(pass.match(passregex)))
+{
+    errors2();
+    error_pass.style.display="block";
+    disable2();
+    document.getElementById("contact").disabled=false;
+    document.getElementById("email").disabled=false;
+document.getElementById("peraddress").disabled=false;
+document.getElementById("corraddress").disabled=false;
+document.getElementById("pass").disabled=false;
+
+
+}
+
 else{
     errors2();
-
+    enable2();
 }
 }
 
 function conpash(){
+
+    var conpass=document.getElementById("conpass").value;
     var contact=document.getElementById("contact").value;
     var email=document.getElementById("email").value;
 
@@ -852,39 +1307,221 @@ function conpash(){
     var pass=document.getElementById("pass").value;
 
 if(!(contact) || !(contact.length==10) ){
-    errors2();
+    disable2();
     error_contact.style.display="block";
+    document.getElementById("contact").disabled=false;
 }
 else if(!(email) || !(email.match(regexemail))){
-    errors2();
     error_email.style.display="block";
+    disable2();
+    document.getElementById("contact").disabled=false;
+    document.getElementById("email").disabled=false;
 }
 else if(!(peraddress)){
     errors2();
     error_perm.style.display="block";
+    disable2();
+    document.getElementById("contact").disabled=false;
+    document.getElementById("email").disabled=false;
+document.getElementById("peraddress").disabled=false;
 
 }
 else if(!(corraddress)){
     errors2();
     error_corr.style.display="block";
+    disable2();
+    document.getElementById("contact").disabled=false;
+    document.getElementById("email").disabled=false;
+document.getElementById("peraddress").disabled=false;
+document.getElementById("corraddress").disabled=false;
+
 
 }
 else if(!(pass) || !(pass.match(passregex)))
 {
     errors2();
     error_pass.style.display="block";
+    disable2();
+    document.getElementById("contact").disabled=false;
+    document.getElementById("email").disabled=false;
+document.getElementById("peraddress").disabled=false;
+document.getElementById("corraddress").disabled=false;
+document.getElementById("pass").disabled=false;
 
+
+}
+else if(conpass!=pass){
+    errors2();
+    error_confirm.style.display="block";
+    enable2();
+    document.getElementById("reg_answer").disabled=true;
 }
 else{
     errors2();
-
+    enable2();
 }
+
 } 
- 
-function regist(){
-    
+
+
+document.getElementById("select_reg_question").onchange = function()
+{
+
+    var conpass=document.getElementById("conpass").value;
+    var contact=document.getElementById("contact").value;
+    var email=document.getElementById("email").value;
+
+    var peraddress=document.getElementById("peraddress").value;
+    var corraddress=document.getElementById("corraddress").value;
+    var pass=document.getElementById("pass").value;
+
+var e = document.getElementById("select_reg_question");
+var select = e.options[e.selectedIndex].value;
+
+
+if(!(contact) || !(contact.length==10) ){
+    disable2();
+    error_contact.style.display="block";
+    document.getElementById("contact").disabled=false;
+}
+else if(!(email) || !(email.match(regexemail))){
+    error_email.style.display="block";
+    disable2();
+    document.getElementById("contact").disabled=false;
+    document.getElementById("email").disabled=false;
+}
+else if(!(peraddress)){
+    errors2();
+    error_perm.style.display="block";
+    disable2();
+    document.getElementById("contact").disabled=false;
+    document.getElementById("email").disabled=false;
+document.getElementById("peraddress").disabled=false;
 
 }
+else if(!(corraddress)){
+    errors2();
+    error_corr.style.display="block";
+    disable2();
+    document.getElementById("contact").disabled=false;
+    document.getElementById("email").disabled=false;
+document.getElementById("peraddress").disabled=false;
+document.getElementById("corraddress").disabled=false;
+
+
+}
+else if(!(pass) || !(pass.match(passregex)))
+{
+    errors2();
+    error_pass.style.display="block";
+    disable2();
+    document.getElementById("contact").disabled=false;
+    document.getElementById("email").disabled=false;
+document.getElementById("peraddress").disabled=false;
+document.getElementById("corraddress").disabled=false;
+document.getElementById("pass").disabled=false;
+
+
+}
+else if(conpass!=pass){
+    errors2();
+    error_confirm.style.display="block";
+    enable2();
+    document.getElementById("reg_answer").disabled=true;
+}
+else if(!(select)){
+        errors2();
+    error_select.style.display="block";
+    enable2();
+    document.getElementById("reg_answer").disabled=true;
+}
+else{
+    errors2();
+    enable2();
+}
+
+};
+ 
+function seque(){
+    
+    var conpass=document.getElementById("conpass").value;
+    var contact=document.getElementById("contact").value;
+    var email=document.getElementById("email").value;
+
+    var peraddress=document.getElementById("peraddress").value;
+    var corraddress=document.getElementById("corraddress").value;
+    var pass=document.getElementById("pass").value;
+    var answer=document.getElementById("reg_answer").value;
+
+if(!(contact) || !(contact.length==10) ){
+    disable2();
+    error_contact.style.display="block";
+    document.getElementById("contact").disabled=false;
+}
+else if(!(email) || !(email.match(regexemail))){
+    error_email.style.display="block";
+    disable2();
+    document.getElementById("contact").disabled=false;
+    document.getElementById("email").disabled=false;
+}
+else if(!(peraddress)){
+    errors2();
+    error_perm.style.display="block";
+    disable2();
+    document.getElementById("contact").disabled=false;
+    document.getElementById("email").disabled=false;
+document.getElementById("peraddress").disabled=false;
+
+}
+else if(!(corraddress)){
+    errors2();
+    error_corr.style.display="block";
+    disable2();
+    document.getElementById("contact").disabled=false;
+    document.getElementById("email").disabled=false;
+document.getElementById("peraddress").disabled=false;
+document.getElementById("corraddress").disabled=false;
+
+
+}
+else if(!(pass) || !(pass.match(passregex)))
+{
+    errors2();
+    error_pass.style.display="block";
+    disable2();
+    document.getElementById("contact").disabled=false;
+    document.getElementById("email").disabled=false;
+document.getElementById("peraddress").disabled=false;
+document.getElementById("corraddress").disabled=false;
+document.getElementById("pass").disabled=false;
+
+
+}
+else if(conpass!=pass){
+    errors2();
+    error_confirm.style.display="block";
+    enable2();
+    document.getElementById("reg_answer").disabled=true;
+}
+else if(!(select)){
+        errors2();
+    error_select.style.display="block";
+    enable2();
+    document.getElementById("reg_answer").disabled=true;
+}
+else if(!(answer)){
+
+    errors2();
+    error_ans.style.display="block";
+}
+else{
+    errors2();
+    enable2();
+}
+
+}
+
+
 document.getElementById("sub").addEventListener("click", function(event){
     event.preventDefault()
     var contact=document.getElementById("contact").value;
@@ -949,6 +1586,7 @@ else{
 
 function lostPass() {
     modal.style.display = "none";
+    errors4();
     passModal.style.display = "block";
     document.getElementById("myform5").reset();
 
@@ -984,7 +1622,6 @@ function securityQue() {
     xhttp.open("GET", "pass_recovery.php?user="+user+"&&q="+q+"&&a="+a, true);
     xhttp.send();
 }
-
 
 
 

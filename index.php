@@ -108,13 +108,13 @@
 					<form method="post" action="login_process.php" id="myform0">
 						<div class="login-form">
 							<div class="control-group">
-									<input type="text" class="login-field" value="" placeholder="username" id="login-name" name="username">
+									<input type="text" class="login-field" onclick="errors3()" value="" placeholder="username" id="login_name" name="username">
 									<label class="login-field-icon fui-user" for="login-name"></label>
-									<span class="error_modal" style="display:none" id="error_login_name">Name is required (only alphabets)</span>
+									<span class="error_modal" style="display:none" id="error_login_name">Username is required</span>
 							</div>
 
 							<div class="control-group">
-									<input type="password" class="login-field" value="" placeholder="password" id="login-pass" name="pswd">
+									<input type="password" class="login-field" onclick="forgot()" value="" placeholder="password" id="login-pass" name="pswd">
 									<label class="login-field-icon fui-lock" for="login-pass"></label>
 							</div>
 
@@ -143,8 +143,9 @@
 					<form method="post" action="pass_change.php" id="myform5">
 						<div class="login-form">
 							<div class="control-group">
-									<input type="text" class="login-field" value="" placeholder="Username" id="ch_user" name="user">
+									<input type="text" class="login-field" onclick="errors4()" value="" placeholder="Username" id="ch_user" name="user">
 									<label class="login-field-icon fui-lock" for="login-pass"></label>
+									<span class="error_modal" style="display:none" id="error_select_user">Whats's your username?</span>
 							</div>
 							<div class="control-group" class=dropdown>
 								<SELECT class="login-field" id="select_que" name="question">
@@ -157,22 +158,22 @@
 								<OPTION Value="4" style="color:black;">Your fav place for vacation?</OPTION>
 								
 								</SELECT>
-								<span class="error_modal" style="display:none" id="error_select">Select your security question</span>
+								<span class="error_modal" style="display:none" id="error_select_que">Select your security question</span>
 							</div>
 
 							<div class="control-group">
-									<input type="text" class="login-field" value="" placeholder="Answer" id="answer" name="answer">
+									<input type="text" class="login-field" value="" onclick="ans()" placeholder="Answer" id="answer" name="answer">
 									<label class="login-field-icon fui-lock" for="login-pass"></label>
 							</div>
 
 							<div class="control-group">
-									<input type="password" class="login-field" value="" onclick="pash()" placeholder="Password" id="ch_pass" name="password" style="display:none;">
+									<input type="password" class="login-field" value=""   onclick="errors5()" placeholder="Password" id="ch_pass" name="password" style="display:none;">
 									<label class="login-field-icon fui-user" for="login-name"></label>
 									<span class="error_modal" style="display:none" id="error_ch_pass">Hey! Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character is required</span>
 							</div>
 
 							<div class="control-group">
-									<input type="password" class="login-field" value="" onclick="conpash()" placeholder="Confirm Password" id="ch_conpass" style="display:none;">
+									<input type="password" class="login-field" value="" onclick="con_security()" placeholder="Confirm Password" id="ch_conpass" style="display:none;">
 									<label class="login-field-icon fui-user" for="login-name"></label>
 									<span class="error_modal" style="display:none" id="error_ch_confirm">Password is not matched</span>
 							</div>
@@ -207,26 +208,21 @@
 						<div class="login-form">
 
 										<div class="control-group">
-												<input type="text" class="login-field " onclick="regi()" value="" placeholder="Name" name="Name" id="reg_name">
+												<input type="text" class="login-field " onblur="fname()" value="" placeholder="Name" name="Name" id="reg_name">
 												<span class="error_modal" style="display:none" id="error_reg_name">Name is required (only alphabets)</span>
 												<label class="login-field-icon fui-user" for="login-name"></label>
 										</div>
 										
-										<div class="control-group">
-												<input type="file" class="login-field " name="photo" id="photo">
-												<span class="error_modal" style="display:none" id="error_reg_name">Name is required (only alphabets)</span>
-												<label class="login-field-icon fui-user" for="login-name"></label>
-										</div>
 
 										<div class="control-group">
-												<input type="text" class="login-field" onclick="fname()" value="" placeholder="Father's name" name="f_name" id="f_name">
+												<input type="text" class="login-field" value=""  onblur="mname()" placeholder="Father's name" name="f_name" id="f_name">
 												<span class="error_modal" style="display:none" id="error_f_name"> father name is required(only alphabets)</span>
 												<label class="login-field-icon fui-user" for="login-name"></label>
 										</div>
 
 
 										<div class="control-group">
-												<input type="text" class="login-field" onclick="mname()" value="" placeholder="Mother's name" id="m_name" name="m_name">
+												<input type="text" class="login-field" onblur="dateob()" value="" placeholder="Mother's name" id="m_name" name="m_name">
 												<span class="error_modal" style="display:none" id="error_m_name">mother name is required (only alphabets)</span>
 												<label class="login-field-icon fui-user" for="login-name"></label>
 										</div>
@@ -234,10 +230,11 @@
 
 										<div class="control-group">
 												<div class="date">
-													<input type="text" class="login-field" disabled="disabled" value="" placeholder="Date of birth" id="dobi" name="dob">
-													<span class="error_modal" style="display:none" id="error_dob">What's your DOB</span>
+													<input type="text" class="login-field"  disabled="disabled" value=""  placeholder="Date of birth" id="dobi" name="dob">
+													
 													<label class="login-field-icon fui-user" for="login-name"></label>
-													<input type="date" class="login-field" onclick="dateob()" value="" placeholder="Date of birth: dd/mm/yy" id="dob" name="dob">
+													<input type="date" class="login-field" onblur="ffemale()" value="" placeholder="Date of birth: dd/mm/yy" id="dob" name="dob">
+													<span class="error_modal" style="display:none" id="error_dob">What's your DOB</span>
 													
 												</div>
 										</div>
@@ -248,11 +245,11 @@
 													<td style="padding-left: 56px;">GENDER</td>
 													<td style="padding-left:38px;">
 														  <label for="male">Male</label>
-  														  <input type="radio" onclick="fmale()" name="gender" id="male" value="0">
+  														  <input type="radio" onclick="nation()" name="gender" id="male" value="0">
   													</td>
   													<td style="padding-left: 38px;">
 													  	  <label for="female">Female</label>
-  													  	  <input type="radio" onclick="ffemale()"  name="gender" id="female" value="1">
+  													  	  <input type="radio" onclick="nation()"  name="gender" id="female" value="1">
 													</td>
 												</tr>
 												
@@ -263,7 +260,7 @@
 										</div>
 
 										<div class="control-group">
-												<input type="text" class="login-field" onclick="nation()" value="" placeholder="Nationality" id="nationality" name="nationality">
+												<input type="text" class="login-field" onblur="nextb1()" value="" placeholder="Nationality" id="nationality" name="nationality">
 												<label class="login-field-icon fui-user" for="login-name"></label>
 												<span class="error_modal" style="display:none" id="error_nationality">What's your nationality ? (only alphabets)</span>
 												
@@ -311,14 +308,14 @@
 						<div class="login-form">
 
 										<div class="control-group">
-												<input type="text" class="login-field" value="" onclick="reg()" placeholder="Registration Number" name="Regino" id="regno">
+												<input type="text" class="login-field" value="" onblur="rollyno()" placeholder="Registration Number" name="Regino" id="regno">
 												<span class="error_modal" style="display:none" id="error_reg">Whats your reg no. ? (format: year/U/regno.) </span>
 												<label class="login-field-icon fui-user" for="login-name"></label>
 
 										</div>
 										
 										<div class="control-group">
-												<input type="text" class="login-field" value="" onclick="rollyno()" placeholder="Roll Number" name="rollno" id="roll">
+												<input type="text" class="login-field" value="" onblur="rolly()" placeholder="Roll Number" name="rollno" id="roll">
 												<label class="login-field-icon fui-user" for="login-name"></label>
 												<span class="error_modal" style="display:none" id="error_roll">Whats your roll no. ? (Format: year/branch/rollno. )</span>
 											
@@ -328,7 +325,7 @@
 										<div class="control-group" class=dropdown>
 													<SELECT class="login-field" id="select" name="department">
 
-													<OPTION  style="text-align: center;" Value="">Department</OPTION>
+													<OPTION  style="text-align: center;" Value="0">Department</OPTION>
 													<OPTION Value="Information Technology" style="color:black;">Information Technology</OPTION>
 													<OPTION Value="Electrical Engineering" style="color:black;">Electrical Engineering</OPTION>
 													<OPTION Value="Computer science and Engineering" style="color:black;">Computer science and Engi.</OPTION>
@@ -344,14 +341,14 @@
 
 
 										<div class="control-group">
-												<input type="number" class="login-field" value="" onclick="c_tenth()" placeholder="Whats your 10th %" id="tenth" name="tenth_mark">
+												<input type="number" class="login-field" value="" onblur="c_tenth()" placeholder="Whats your 10th %" id="tenth" name="tenth_mark">
 												<label class="login-field-icon fui-user" for="login-name"></label>
 												<span class="error_modal" style="display:none" id="error_tenth">Hey ! Fill your 10th % (0 < % <= 100)</span>
 										</div>
 
 
 										<div class="control-group">
-												<input type="number" class="login-field" value="" onclick="c_twelve()" placeholder="Whats your 12th %" id="twelve" name="twelve_mark">
+												<input type="number" class="login-field" value="" onblur="c_twelve()" placeholder="Whats your 12th %" id="twelve" name="twelve_mark">
 												<label class="login-field-icon fui-user" for="login-name"></label>
 												<span class="error_modal" style="display:none" id="error_twelve">Hey ! Fill your 12th %(0 < % <= 100)</span>
 										</div>
@@ -359,7 +356,7 @@
 
 
 										<div class="control-group">
-												<input type="number" class="login-field" value="" onclick="c_cgpa()" placeholder="Whats your CGPA(in %)" id="cgpa" name="cgpa_mark">
+												<input type="number" class="login-field" value="" onblur="c_cgpa()" placeholder="Whats your CGPA(in %)" id="cgpa" name="cgpa_mark">
 												<label class="login-field-icon fui-user" for="login-name"></label>
 												<span class="error_modal" style="display:none" id="error_cgpa">Hey ! Fill your cgpa(0 < % <= 100)</span>
 										</div>
@@ -409,34 +406,34 @@
 						<div class="login-form">
 
 										<div class="control-group">
-												<input type="number" class="login-field" value="" onclick="con()" placeholder="Contact no." name="contact" id="contact">
+												<input type="number" class="login-field" value="" onblur="con()" placeholder="Contact no." name="contact" id="contact">
 												<label class="login-field-icon fui-user" for="login-name"></label>
 												<span class="error_modal" style="display:none" id="error_contact">Hey ! Fill your contact</span>
 										</div>
 										
 										<div class="control-group">
-												<input type="email" class="login-field" value="" onclick="eemail()" placeholder="Email" name="email" id="email" >
+												<input type="email" class="login-field" value="" onblur="eemail()" placeholder="Email" name="email" id="email" >
 												<label class="login-field-icon fui-user" for="login-name"></label>
 												<span class="error_modal" style="display:none" id="error_email">Hey ! Fill your email correctly</span>
 										</div>
 
 
 										<div class="control-group">
-												<input type="address" class="login-field" value="" onclick="permanent()" placeholder="Permanent Address" id="peraddress" name="peraddress">
+												<input type="address" class="login-field" value="" onblur="permanent()" placeholder="Permanent Address" id="peraddress" name="peraddress">
 												<label class="login-field-icon fui-user" for="login-name"></label>
 												<span class="error_modal" style="display:none" id="error_perm">Hey ! Fill your perm. address</span>
 										</div>
 
 
 										<div class="control-group">
-												<input type="text" class="login-field" value="" onclick="corres()" placeholder="Correspondence Address" id="corraddress" name="corraddress" >
+												<input type="text" class="login-field" value="" onblur="corres()" placeholder="Correspondence Address" id="corraddress" name="corraddress" >
 												<label class="login-field-icon fui-user" for="login-name"></label>
 												<span class="error_modal" style="display:none" id="error_corr">Hey ! Fill your corr. address</span>
 										</div>
 
 
 										<div class="control-group">
-												<input type="password" class="login-field" value="" onclick="pash()" placeholder="Password" id="pass" name="password">
+												<input type="password" class="login-field" value="" onblur="pash()" placeholder="Password" id="pass" name="password">
 												<label class="login-field-icon fui-user" for="login-name"></label>
 												<span class="error_modal" style="display:none" id="error_pass">Hey! Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character is required</span>
 										</div>
@@ -444,7 +441,7 @@
 
 
 										<div class="control-group">
-												<input type="password" class="login-field" value="" onclick="conpash()" placeholder="Confirm Password" id="conpass" name="confirm password">
+												<input type="password" class="login-field" value="" onblur="conpash()" placeholder="Confirm Password" id="conpass" name="confirm password">
 												<label class="login-field-icon fui-user" for="login-name"></label>
 												<span class="error_modal" style="display:none" id="error_confirm">Password is not matched</span>
 										</div>
@@ -460,12 +457,19 @@
 											<OPTION Value="4" style="color:black;">Your fav place for vacation?</OPTION>
 											
 											</SELECT>
-											<span class="error_modal" style="display:none" id="error_select">Select your security question</span>
+											<span class="error_modal" style="display:none"  id="error_select">Select your security question</span>
 										</div>
 
 										<div class="control-group">
-												<input type="text" class="login-field" value="" placeholder="Answer" id="reg_answer" name="reg_answer">
+												<input type="text" class="login-field" value="" onblur="seque()" placeholder="Answer" id="reg_answer" name="reg_answer">
 												<label class="login-field-icon fui-lock" for="login-pass"></label>
+												<span class="error_modal" style="display:none" id="error_ans">Fill the Answer</span>
+										</div>
+
+										<div class="control-group">
+												<input type="file" class="login-field"name="photo"  id="photo">
+												<span class="error_modal" style="display:none" id="error_photo">Upload your Photo</span>
+												<label class="login-field-icon fui-user" for="login-name"></label>
 										</div>
 
 
@@ -634,5 +638,6 @@
 
 	<script type="text/javascript" src="jquery.min.js"></script>
     <script src="js/javascript.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
