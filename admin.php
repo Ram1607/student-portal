@@ -76,8 +76,8 @@
                 <div class="nav-menu">
                     <ul>
                         <li><a href="http://localhost:86/student-portal">Home</a></li>
-                        <li><a href="#">Notice</a></li>
-                        <li><a href="#request">Request</a></li>
+                        <li><a href="#note">Notice</a></li>
+                        <li><a href="#request">Requests</a></li>
                         <li><a href="#manage">Manage</a></li>
                         <!--<li class="drop-down"><a href="#">Download</a></li>-->
                         <li style="float:right"><a href="logout.php" id="logoutbtn">logout</a></li>
@@ -89,13 +89,18 @@
 
   <br>
   <br>
+  <div id="note">
+    <br>
+    <br>
+
+
   <form action="notice_process.php" method="post" id="notice_form">
   <table class="table">
       <thead>
         <tr>
 
             <th style="width: 80%">Notice</th>
-            <th style="width: 20%"><input type="submit" name="submit" id="submit_notice_form" value="Submit" style="background-color:blue"></th>
+            <th style="width: 20%"><button  class=btn-change type="submit" name="submit" id="submit_notice_form" value="Submit"> Submit </button></th>
 
         </tr>
       </thead>
@@ -113,10 +118,15 @@
       </tbody>
     </table>
   </form>
-<br>
-<br>
+</div>
+  <br>
 
-    <div>
+  <br>
+    <br>
+  <br>
+
+
+    <div id="request">
       <table class="table">
         <thead>
           <tr>
@@ -131,6 +141,7 @@
               <th>Reg. No.</th>
               <th>Roll. No.</th>
               <th>Action</th>
+              <th>Profile</th>
           </tr>
           <?php
               while($row=mysqli_fetch_assoc($result))
@@ -142,8 +153,10 @@
               <td><?php echo $row['roll_no']; ?></td>
               <td><button class="btn-change" style="background-color: green" onclick="ajaxreq('acc','<?php echo $row['reg_no'];?>')">Accept</button><button style="background-color: red;margin-left: 5%;" class="btn-change" onclick="ajaxreq('rej','<?php echo $row['reg_no'];?>')">Reject</button> 
 
-              <form method='post' action="admin.php#view">
-              <button type='submit' name=view value='<?php echo $row['roll_no'];?>' class="btn-change">View</button>
+          </td>
+          <td>
+            <form method='post' action="admin.php#view">
+              <button  action="admin.php#view" type='submit' name=view value='<?php echo $row['roll_no'];?>' class="btn-change">View</button>
             </form>
           </td>
           </tr>
@@ -152,6 +165,7 @@
       </table>
 
     <br/>
+    <div class="manage">
 
     <table class="table">
       <thead>
@@ -168,7 +182,7 @@
             <th>Name</th>
             <th>Reg. No.</th>
             <th >Roll. No.</th>
-            <th>Action</th>
+            <th>Profile</th>
         </tr>
         <?php
             $s = "SELECT * FROM details WHERE active=1";
@@ -204,7 +218,7 @@
             <th>Name</th>
             <th>Reg. No.</th>
             <th>Roll. No.</th>
-            <th>Action</th>
+            <th>Profile</th>
         </tr>
         <?php
             $s = "SELECT * FROM details WHERE active=2";
@@ -223,6 +237,8 @@
             <?php } ?>
       </tbody>
     </table>
+
+  </div>
 
 
 

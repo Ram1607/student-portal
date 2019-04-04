@@ -954,7 +954,7 @@ else if(!(twelve>0 && twelve<=100)){
 
     document.getElementById("cgpa").disabled=true;
 }
-else if(!(cgpa>0 && cgpa<=100)){
+else if(!(cgpa>0 && cgpa<=10)){
     errors1();
     error_cgpa.style.display="block";
 
@@ -1028,7 +1028,7 @@ else if(!(twelve>0 && twelve<=100)){
 
     document.getElementById("cgpa").disabled=false;
 }
-else if(!(cgpa>0 && cgpa<=100)){
+else if(!(cgpa>0 && cgpa<=10)){
     errors1();
     error_cgpa.style.display="block";
 

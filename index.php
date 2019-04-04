@@ -239,7 +239,7 @@
 													<input type="text" class="login-field"  disabled="disabled" value=""  placeholder="Date of birth" id="dobi" name="dob">
 													
 													<label class="login-field-icon fui-user" for="login-name"></label>
-													<input type="date" class="login-field" onblur="ffemale()" value="" placeholder="Date of birth: dd/mm/yy" id="dob" name="dob">
+													<input type="date" class="login-field" onblur="ffemale()" value="" max="2005-12-31" min="1947-12-31" placeholder="Date of birth: dd/mm/yy" id="dob" name="dob">
 													<span class="error_modal" style="display:none" id="error_dob">What's your DOB</span>
 													
 												</div>
