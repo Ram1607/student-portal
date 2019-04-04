@@ -78,6 +78,17 @@
 	</div>
   <a id="myBtn"></a>
 
+  <div id="notice">
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
                                           <!-- notice -->
@@ -104,10 +115,14 @@
       </tbody>
     </table>
 
+  </div>
+
+    <div id="profile">
+
     <br>
     <br>
     <br>
-    
+
 
 
 	<img style=" margin-left: 43%;
@@ -270,6 +285,7 @@
 
       </tbody>
     </table>
+   </div>
 <br>
 <br>
     <table class="table" style="width: 60%">

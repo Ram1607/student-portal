@@ -137,7 +137,7 @@ function save1() {
     };
     console.log("name="+name+"&fname="+fname+"&mname="+mname+"&reg_no="+reg_no+"&dob="+dob+"&gender="+gender+"&nation="+nation+"&marks_10="+marks_10+
         "&marks_12="+marks_12+"&cgpa="+cgpa+"&contact="+contact+"&email="+email+"&per_address="+per_address+"&cor_address="+cor_address+"&add_info="+add_info);
-    xhttp.open("GET", "edit.php?name="+name+"&fname="+fname+"&mname="+mname+"&reg_no="+reg_no+"&dob="+dob+"&gender="+gender+"&nation="+nation+"&marks_10="+marks_10+
+    xhttp.open("POST", "edit.php?name="+name+"&fname="+fname+"&mname="+mname+"&reg_no="+reg_no+"&dob="+dob+"&gender="+gender+"&nation="+nation+"&marks_10="+marks_10+
         "&marks_12="+marks_12+"&cgpa="+cgpa+"&contact="+contact+"&email="+email+"&per_address="+per_address+"&cor_address="+cor_address+"&add_info="+add_info, true);
     xhttp.send();
 }

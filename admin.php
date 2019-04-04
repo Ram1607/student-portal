@@ -87,9 +87,16 @@
             </div>
     </div>
 
+  <br >
   <br>
-  <br>
-  <div id="note">
+  <div  id="note">
+    <br><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
     <br>
     <br>
 
@@ -165,7 +172,8 @@
       </table>
 
     <br/>
-    <div class="manage">
+    <div id="manage">
+
 
     <table class="table">
       <thead>
@@ -239,6 +247,7 @@
     </table>
 
   </div>
+
 
 
 
